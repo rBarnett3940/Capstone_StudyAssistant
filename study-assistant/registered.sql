@@ -47,3 +47,14 @@ ALTER TABLE `users`
 COMMIT;
 
 
+CREATE TABLE preferences (
+  userID int(11) NOT NULL,
+  mode int,
+  tod int,
+  env int,
+  tech int,
+  retain int,
+  maxHours int
+);
+
+

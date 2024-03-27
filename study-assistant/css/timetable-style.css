@@ -3,7 +3,6 @@
 /* Apply the Raleway font to specific elements */
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #004792;
 }
 
 :root {
@@ -12,16 +11,33 @@ body {
     width:100%;
   }
 
+
+#custom-header h1{
+    font-size: 50px;
+}
+
 #calendar {
     padding: 20px;
     width:100%;
+    text-decoration: none !important;
+    cursor: default !important;
 }
+
+.fc th {
+    text-decoration: none !important;
+}
+
 
 .fc-event {
     padding: 5px;
     font-size: 14px;
     font-weight: bold;
 }
+
+#calendar .fc-col-header-cell {
+    text-decoration: none !important;
+}
+
 
 .fc-header-toolbar .fc-button {
     background-color: #004792; /* Change to the desired background color */
@@ -92,4 +108,5 @@ body {
 .fc-title {
     font-weight: bold; /* Make event titles bold */
 }
+
 

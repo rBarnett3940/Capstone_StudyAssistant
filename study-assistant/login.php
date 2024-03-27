@@ -9,7 +9,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == TRUE) {
 }
 
 # Include connection
-require_once "./config.php";
+require_once "./includes/config-registered-db.php";
 
 # Define variables and initialize with empty values
 $user_login_err = $user_password_err = $login_err = "";
@@ -59,6 +59,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION["id"] = $id;
               $_SESSION["username"] = $username;
               $_SESSION["loggedin"] = TRUE;
+
+              $default_values = [];
+              $sql_select = "SELECT * FROM preferences WHERE userID = ?";
+              $stmt_select = $link->prepare($sql_select);
+              $stmt_select->bind_param("i", $_SESSION["id"]);
+              $stmt_select->execute();
+              $result_select = $stmt_select->get_result();
+              if ($result_select->num_rows > 0) {
+                  $row = $result_select->fetch_assoc();
+                  $default_values = $row;
+              }
+              if ($default_values){
+                $_SESSION["mode"] = $default_values['mode'];
+                $_SESSION["tod"] = $default_values['tod'];
+                $_SESSION["dow"] = $default_values['dow'];
+                $_SESSION["env"] = $default_values['env'];
+                $_SESSION["tech"] = $default_values['tech'];
+                $_SESSION["retention"] = $default_values['retention'];
+                $_SESSION["maxHours"] = $default_values['maxHours'];
+              }
+              $stmt_select->close();
+
+              
 
               # Redirect user to index page
               echo "<script>" . "window.location.href='./timetable.php'" . "</script>";

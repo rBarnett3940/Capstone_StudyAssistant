@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="./css/ai_display_styles.css" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Test AI</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #002c5c;">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand" href="#" style="color: white;">Study Assistant</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../study-assistant/ai-temp.php" style="color: white;">AI</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../study-assistant/timetable.php" style="color: white;">Timetable</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: white;">Features</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                                IDK
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../study-assistant/logout.php" style="color: white;">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container course">
+        <h1>{{ title }}</h1>
+        <p>{{ message }}</p>
+        <h2>{{ prediction }}</h2>
+        <p style="display: none;" id="user">{{ user }}</p>
+        <p style="display: none;" id="tod">{{ tod }}</p>
+        <p style="display: none;" id="dow">{{ dow }}</p>
+        <p style="display: none;" id="max-hours">{{ maxHours }}</p>
+        <p>If you would like to for your recommeded study hours to be automatically added to your study timetable, please click the button below.</p>
+        <button id="t-btn">Add to Timetable</button>
+    </div> 
+    <script>
+        const button = document.getElementById('t-btn');
+        button.addEventListener('click', function(event) {
+            var course = document.querySelector("h1").innerText;
+            var hours = parseInt(document.querySelector("h2").innerText);
+            var user = parseInt(document.querySelector('#user').innerText);
+            var tod = parseInt(document.querySelector('#tod').innerText);
+            var dow = parseInt(document.querySelector('#dow').innerText);
+            var maxHours = parseInt(document.querySelector('#max-hours').innerText);
+ 
+
+            var today = new Date();
+            var startTime = new Date(today);
+            console.log(startTime);
+            if (tod == 1){
+                startTime.setHours(8);
+            } else if (tod == 1){
+                startTime.setHours(12);
+            } else if (tod == 1){
+                startTime.setHours(18);
+            }
+
+            var numEvents = Math.floor(hours / maxHours);
+            var remainder = hours % maxHours;
+            if (remainder > 0) {
+                numEvents++; 
+            }
+
+
+            // Check for existing events
+            fetch('http://localhost:3000/api/events')
+                .then(response => response.json())
+                .then(events => {
+                    // Filter events based on user ID and check for overlaps
+                    var filteredEvents = events.filter(event => event.userID === user);
+                    var conflictingEvents = filteredEvents.filter(event => {
+                        var eventStart = new Date(event.start);
+                        return eventStart >= startTime && eventStart < endTime;
+                    });
+                    if (conflictingEvents.length > 0) {
+                        console.error('Conflicting events detected. Unable to add events.');
+                        return;
+                    }
+
+                    // Add events to the database
+                    var eventPromises = [];
+                    for (let i = 0; i < numEvents; i++) {
+                        var eventData = {
+                            title: course,
+                            start: startTime.toISOString(), // Convert to ISO string format
+                            daysOfWeek: [dow.toString()], // Convert to array with string value
+                            startTime: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), // Format as HH:mm
+                            endTime: '', // Set the end time accordingly
+                            color: '#00FF00',
+                            recurring: true,
+                            id: Math.round(Math.random() * 100000) // Generate a random ID
+                        };
+                        // Calculate end time for the event (30 minutes by default)
+                        var endTime = new Date(startTime);
+                        endTime.setMinutes(endTime.getMinutes() + 30);
+                        eventData.endTime = endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Format as HH:mm
+                        
+                        // Add event data to the database
+                        var eventPromise = saveEvent(eventData);
+                        eventPromises.push(eventPromise);
+                        
+                        // Increment start time for the next event
+                        startTime.setMinutes(startTime.getMinutes() + maxHours * 60);
+                    }
+
+                    // Wait for all event promises to resolve
+                    Promise.all(eventPromises)
+                        .then(() => console.log('Events added successfully'))
+                        .catch(error => console.error('Error adding events:', error));
+                })
+                .catch(error => console.error('Error fetching events:', error));
+        });
+
+        function saveEvent(eventData) {
+            return fetch('http://localhost:3000/api/events', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify([{ userID: user }, { eventID: eventData.id }, { info: eventData }])
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to save event');
+                }
+                return response.json();
+            })
+            .then(data => console.log(data.message))
+            .catch(error => console.error('Error saving event:', error));
+        }
+
+
+    /*
+            var eventData = {
+                title: course,
+                start: info.startStr,
+                daysOfWeek: getDayOfWeek(info.startStr),
+                startTime: getTimeFromDate(info.startStr),
+                endTime: getTimeFromDate(info.endStr),
+                color: '#00FF00',
+                recurring: true,
+                id: eventId
+            };*/
+
+
+        function getEvents(){
+            fetch('http://localhost:3000/api/events')
+            .then(response => response.json())
+            .then(events => {
+                if (events[0] != undefined){
+                    for (let x in events){
+                        if (events[x]["userID"] != user){
+                            events.splice(x, 1);
+                        }
+                    }
+                }
+                console.log(events);
+                console.log("Events Loaded Successfully");
+                return events;
+            })
+            .catch(error => console.error('Error fetching events:', error));
+        }  
+        function addToCalendar(){
+            if (hours > maxHours){
+                var r = hours%maxHours;
+                var q = Math.floor(hours / maxHours);
+            }else{
+
+            }
+        }
+
+        function loadNumberOfEventsByDay(events){
+            console.log(events);
+            for(var i=0; i<events.length; i++){
+                var num  = getDayOfWeek(events[i]["start"]);
+                eventsByDay[num] = eventsByDay[num] + parseInt(num);
+                console.log("test", eventsByDay[num]);
+            }
+        }
+
+        function findAvailableTime(){
+            if (dow == 1){
+
+            }
+            for (var i in total_events){
+                
+            }
+        }
+
+        function getDayOfWeek(dateString) {
+            // Create a new Date object from the provided dateString
+            var date = new Date(dateString);
+            // Get the day of the week (0=Sunday, 1=Monday, ..., 6=Saturday)
+            var dayOfWeek = date.getDay();
+            // Return an array with the day of the week
+            return dayOfWeek.toString();
+        }
+
+        function getTimeFromDate(dateTimeString) {
+            var date = new Date(dateTimeString);
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            return hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+        }
+
+        function getEventId(callback) {
+            fetch('http://localhost:3000/api/EventIds', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch existing event IDs');
+                }
+                return response.json();
+            })
+            .then(existingIds => {
+                // Generate a unique event ID
+
+                var eventId = Math.round(Math.random() * 100000);
+                while (existingIds.includes(eventId)){
+                    eventId = Math.round(Math.random() * 100000);
+                } 
+                // Call the callback with the generated event ID
+                console.log("This", eventId);
+                callback(eventId);
+            })
+            .catch(error => {
+                console.error('Error fetching existing event IDs:', error);
+                // Call the callback with null to indicate error
+                callback(null);
+            });
+        }
+        /*
+        function saveEvent(eventData) {
+            console.log(typeof(eventData));
+            fetch('http://localhost:3000/api/events', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify([{userID: 1}, {eventID: eventData.id}, { info: eventData }]) // Wrap eventData in an object with 'info' property
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to save event');
+                }
+                console.log("Event Addedd Successfully")
+                return response.json();
+            })
+            .then(data => console.log(data.message))
+            .catch(error => console.error('Error saving event:', error));
+        }*/
+    </script>  
+</body>
+</html>

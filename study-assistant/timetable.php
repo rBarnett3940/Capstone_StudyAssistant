@@ -1,12 +1,12 @@
 <?php
-# Initialize the session
-session_start();
+    # Initialize the session
+    session_start();
 
-# If user is not logged in then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
-    echo "<script>window.location.href='../login.php';</script>";
-  exit;
-}
+    # If user is not logged in then redirect him to login page
+    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
+        echo "<script>window.location.href='./login.php';</script>";
+    exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,24 +16,42 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timetable</title>
     <link href="./css/timetable-style.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler/index.global.min.js"></script>
-    <!--<script src="server.js"></script>-->
+    <?php include './includes/bootstrap.php'; ?>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <style>
         #calendar {
             max-width: 900px;
             margin: 0 auto;
         }
+        #color-preview {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #FF0000;
+        }
     </style>
 </head>
 <body>
     <?php include './includes/header.php'; ?>
+    <br>
     <div class="container">
-        <div id="custom-header">My Timetable</div>
+        <div id="custom-header"><h1>My Timetable</h1></div>
         <div id="add-event-form">
             <label for="event-color">Color:</label>
-            <input type="color" id="event-color">
+            <select id="event-color">
+                <option value="#FF0000">Red</option>
+                <option value="#00FF00">Green</option>
+                <option value="#0000FF">Blue</option>
+                <!-- Add more color options as needed -->
+            </select>
+            <div id="color-preview"></div>
         </div>
         <div id="calendar"></div>
     </div>
@@ -47,6 +65,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
                 slotLabelInterval: '00:30',
                 editable: true, // Enable editing events
                 selectable: true, // Enable selecting time slots to add new events
+                eventDidMount: function(info) {
+                    // Initialize tooltip for each event element
+                    tippy(info.el, {
+                        content: info.event.title, // Set tooltip content to event title
+                        placement: 'top', // Position tooltip at the top of the event
+                        trigger: 'mouseenter', // Show tooltip on mouse enter
+                    });
+                },
                 events: [
                     
                     // Add more events with different colors as needed
@@ -141,6 +167,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
                 }
         }
         });
+
+            var colorSelect = document.getElementById('event-color');
+            var colorPreview = document.getElementById('color-preview');
+            colorSelect.addEventListener('change', function() {
+                // Update the color preview box based on the selected color
+                colorPreview.style.backgroundColor = colorSelect.value;
+            });
 
             function getDayOfWeek(dateString) {
                 // Create a new Date object from the provided dateString
@@ -263,6 +296,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
             })
             .catch(error => console.error('Error fetching events:', error));
             calendar.render(); 
+
+            var dayHeaders = document.querySelectorAll('.fc-day-header');
+            dayHeaders.forEach(function(header) {
+                header.style.textDecoration = 'none';
+                header.style.cursor = 'default';
+                header.addEventListener('click', function(event) {
+                    event.preventDefault();
+                });
+            });
         });
     
 

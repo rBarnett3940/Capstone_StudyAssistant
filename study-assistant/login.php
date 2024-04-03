@@ -76,12 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["dow"] = $default_values['dow'];
                 $_SESSION["env"] = $default_values['env'];
                 $_SESSION["tech"] = $default_values['tech'];
-                $_SESSION["retention"] = $default_values['retention'];
+                $_SESSION["retention"] = $default_values['retain'];
                 $_SESSION["maxHours"] = $default_values['maxHours'];
               }
               $stmt_select->close();
 
-              
 
               # Redirect user to index page
               echo "<script>" . "window.location.href='./timetable.php'" . "</script>";

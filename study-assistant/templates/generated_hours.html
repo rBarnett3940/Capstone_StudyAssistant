@@ -329,11 +329,11 @@
                 var dayFormatted = nextDay.toISOString();
                 var startT = `${eventsInDay[key][0]["start"]}:00`;
                 var endT = 0;
-                if (counter != 1){
-                    endT = `${eventsInDay[key][0]["end"]}:00`;
-                } else {
+                if (counter == 1 && remainder != 0){
                     var endTm = eventsInDay[key][0]["start"] + remainder;
                     endT = `${endTm}:00`;
+                } else {
+                    endT = `${eventsInDay[key][0]["end"]}:00`;
                 }
 
                 counter --;

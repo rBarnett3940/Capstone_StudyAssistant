@@ -67,10 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $stmt_select->execute();
               $result_select = $stmt_select->get_result();
               if ($result_select->num_rows > 0) {
-                  $row = $result_select->fetch_assoc();
-                  $default_values = $row;
+                $row = $result_select->fetch_assoc();
+                $default_values = $row;
               }
-              if ($default_values){
+              if ($default_values) {
                 $_SESSION["mode"] = $default_values['mode'];
                 $_SESSION["tod"] = $default_values['tod'];
                 $_SESSION["dow"] = $default_values['dow'];
@@ -133,14 +133,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "<div class='alert alert-danger'>" . $login_err . "</div>";
         }
         ?>
-        <div class="form-wrap border rounded p-4">
+        <div class="form-wrap border rounded p-4 bg-white">
           <h1>Log In</h1>
           <p>Please login to continue</p>
           <!-- form starts here -->
           <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
             <div class="mb-3">
               <label for="user_login" class="form-label">Email or username</label>
-              <input type="text" class="form-control" name="user_login" id="user_login" value="<?= $user_login; ?>">
+              <input type="text" class="form-control" name="user_login" id="user_login" value="<?= $user_login; ?> ">
               <small class="text-danger"><?= $user_login_err; ?></small>
             </div>
             <div class="mb-2">

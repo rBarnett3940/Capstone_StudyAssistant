@@ -23,6 +23,34 @@ def root():
         # You can put your GET request handling logic here
         pass"""
 
+
+@app.route("/dashboard/<int:user_id>", methods=["Get"])
+def dashboard (user_id):
+    try:
+        # Connect to the MySQL database
+        conn = mysql.connector.connect(
+            host="localhost",
+            user="root",  # Update with your MySQL username
+            password="",  # Update with your MySQL password
+            database="timetable"  # Update with your MySQL database name
+        )
+
+        # Create a cursor object to execute SQL queries
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM events WHERE FIND_IN_SET(DAYOFWEEK(NOW()), JSON_UNQUOTE(JSON_EXTRACT(info, '$.daysOfWeek'))) > 0 AND TIME(NOW()) BETWEEN CAST(JSON_UNQUOTE(JSON_EXTRACT(info, '$.startTime')) AS TIME) AND CAST(JSON_UNQUOTE(JSON_EXTRACT(info, '$.endTime')) AS TIME) ORDER BY CAST(JSON_UNQUOTE(JSON_EXTRACT(info, '$.startTime')) AS TIME) ASC LIMIT 3;")
+        events = cursor.fetchall()
+        print(events)
+        return render_template("ai_questions.html", title="COMP1126", message=events)
+    except mysql.connector.Error as e:
+        # Handle database connection errors
+        error_message = f"Failed to connect to the database: {e}"
+        print(error_message)
+        return render_template("ai_questions.html", title="COMP1126", message="Error Predicting value. Please try again later!")
+
+
+
+
+
 courses = ['COMP1126', 'COMP1127']
 
 

@@ -2,6 +2,22 @@
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
+  margin-top: -50px;
+  padding: 0;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 100vh; */
+  background-image: url('https://www.monash.edu/__data/assets/image/0011/3374543/WebCampaignBanner_2400x900.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container{
+  width: 90vw;
 }
 
 .alert {

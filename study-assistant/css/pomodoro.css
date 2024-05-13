@@ -1,0 +1,107 @@
+html {
+    text-align: center;
+    min-width: 350px;
+    font-family: 'Noto Sans', sans-serif;
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet");
+  }
+  
+  h1 {
+    font-family: 'Pacifico';
+    font-size: 4em;
+    font-weight: lighter;
+    padding: 0px;
+    margin: 0px 10px;
+  }
+  
+  .container {
+    padding: 0px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  #pomodoro {
+    margin: 0 auto;
+    padding: 0px 10px;
+  }
+  
+  #status {
+    font-size: 2em;
+    font-weight: bold;
+    color: #1d1f97;
+  }
+  
+  .timerDisplay {
+    font-size: 8em;
+    font-weight: bold;
+  }
+
+
+  
+  .btn {
+    margin: 10px;
+    padding: 8px 10px;
+    color: white;
+    font-size: 1em;
+    cursor:pointer;
+    border: 2px solid white;
+  }
+  
+  #start-btn {
+    height: 40px;
+    width: 90px;
+    border-radius: 20px;
+    background: #2238b4;
+  }
+  
+  .btn-settings {
+    background-color: #3b3b3b;
+    margin: 10px;
+    border: 1px solid #4e4e5b;
+    border-radius: 10px;
+    padding: 2px 5px;
+    min-width: 40px;
+    color: white;
+    font-size: 2em;
+    cursor:pointer;
+  }
+  
+  .settings {
+    margin: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+  }
+  
+  #reset {
+    font-size: larger;
+    border-radius: 20px;
+    padding: 10px;
+    background: #074082;
+    transform: translate(0%, 50%);
+    
+  }
+  
+  #work, #break {
+    color: #4e4e5b;
+    font-weight: bold;
+  } 
+  
+  #work p, #break p {
+    color: #ffffff;
+    background: #1d1f97;
+    padding: 5px;
+  }
+  
+  .footer {
+    padding: 20px 0;
+    color: #4e4e5b;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .timerDisplay {
+    font-size: 2.5em;
+    }
+  }

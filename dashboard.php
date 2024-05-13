@@ -13,6 +13,7 @@ $loginManagement->startSession();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +21,12 @@ $loginManagement->startSession();
     <title>Dashboard</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon">
-    
+
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/main.css">
-    
+
 </head>
+
 <body>
     <?php include '_header.php'; ?>
 
@@ -40,10 +42,11 @@ $loginManagement->startSession();
             <section>
                 <h2>Welcome <?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName'] ?></h2>
             </section>
-                
+
         </main>
     </div>
 
     <?php include '_footer.php' ?>
 </body>
+
 </html>

@@ -54,17 +54,6 @@ def dashboard (user_id):
 courses = ['COMP1126', 'COMP1127']
 
 
-
-# Define the home page
-@app.route("/COMP1126_ai_starter", methods=["POST"])
-def homeCOMP1126 ():
-    data = request.form
-    user = data.get("userID")
-    tod = data.get("tod")
-    dow = data.get("dow")
-    maxHours = data.get("maxHours")
-    return render_template("ai_questions.html", title="COMP1126", user=user, tod=tod, dow=dow, maxHours=maxHours)
-
 @app.route("/COMP1126_ai", methods=["POST"])
 def predict_COMP1126():
     data = request.form
@@ -134,24 +123,15 @@ def predict_COMP1126():
         # Close the cursor and connection
         cursor.close()
         conn.close()
-        return render_template("generated_hours.html", title="COMP1126", message="For COMP1126 the recommeded amount of hours you should study is:", prediction=rounded_prediction, user=user, tod=tod,  dow=dow, maxHours=maxHours)
+        response_data = {"message": "For COMP1126 the recommeded amount of hours you should study is:", "prediction": rounded_prediction}
+        return jsonify(response_data)
     except mysql.connector.Error as e:
         # Handle database connection errors
         error_message = f"Failed to connect to the database: {e}"
         print(error_message)
-        return render_template("ai_questions.html", title="COMP1126", message="Error Predicting value. Please try again later!", user=user, tod=tod,  dow=dow, maxHours=maxHours)
+        response_data = {"message": "Error Predicting value. Please try again later!", "prediction": 0}
+        return jsonify(response_data)
 
-
-
-# Define the home page
-@app.route("/COMP1127_ai_starter", methods=["POST"])
-def homeCOMP1127():
-    data = request.form
-    user = data.get("userID")
-    tod = data.get("tod")
-    dow = data.get("dow")
-    maxHours = data.get("maxHours")
-    return render_template("ai_questions.html", title="COMP1127", user=user, tod=tod, dow=dow, maxHours=maxHours)
 
 
 @app.route("/COMP1127_ai", methods=["POST"])

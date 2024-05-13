@@ -1,3 +1,51 @@
 header nav a{
     color: white;
 }
+
+.card-container{
+    border: none;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center; /* Align items horizontally */
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    border: none;
+    width: 15rem;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    padding: 25px 10px 0 10px;
+  }
+
+  .card-title h1{
+    font-size: 2rem;
+  }
+
+  .card-title p{
+    font-size: 0.6rem;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.9;
+  }

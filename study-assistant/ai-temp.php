@@ -11,8 +11,13 @@ if (!isset($_SESSION['mode'])) {
     echo "<script>window.location.href='./ai_error.php';</script>";
     exit;
 }
+
+var_dump($_SESSION['generated_hours']);
+
 $courses1 = ["COMP1126", "COMP1127", "COMP1161", "COMP1210", "COMP1220"];
 $courses2 = ["COMP2190", "COMP2140", "COMP2171", "COMP2201", "COMP2211", "COMP2340", "COMP2130"];
+$titles1 = ["Introduction to Computing I", "Introduction to Computing II", "Object-Oriented Programming", "Mathematics for Computing", "Computing and Society"];
+$titles2 = ["Net-Centric Computing", "Software Engineering", "Object Oriented Design and Implementation", "Discrete Mathematics for Computer Science", "Analysis of Algorithms", "Computer Systems Organization", "Systems Programming"];
 ?>
 
 <!DOCTYPE html>
@@ -28,53 +33,55 @@ $courses2 = ["COMP2190", "COMP2140", "COMP2171", "COMP2201", "COMP2211", "COMP23
 </head>
 
 <body>
+    <script>
+        function setSessionAndRedirect(courseCode, courseTitle) {
+            // Set PHP session variables using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'set_session_variables.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Redirect to ai_questions.php
+                    window.location.href = './ai_questions.php';
+                }
+            };
+            xhr.send('course_code=' + courseCode + '&course_title=' + courseTitle);
+        }
+    </script>
     <?php include './includes/header.php'; ?>
     <br>
     <div class="container">
-        <div class="d-flex justify-content-around bg-dark p-4">
-            <div class="d-flex flex-column bg-light p-2">
-                <?php foreach ($courses1 as $course) { ?>
-                    <button class="course-btn <?php echo $course; ?>"><?php echo $course; ?></button>
+        <div class="">
+            <h1>First Year Courses</h1>
+            <div class="card-container">
+                <?php foreach ($courses1 as $index => $course) { ?>
+                    <div class="card">
+                        <img src="./img/course1.jpg" alt="Denim Jeans" style="width:100%">
+                        <div class="card-title">
+                            <h1><?php echo $course; ?></h1>
+                            <p><?php echo $titles1[$index]; ?></p>
+                        </div>
+                        <p><button class="course-btn <?php echo $course; ?>" onclick="setSessionAndRedirect('<?php echo $course; ?>', '<?php echo $titles1[$index]; ?>')">Use AI</button></p>
+                    </div>
                 <?php } ?>
             </div>
-            <div class="d-flex flex-column bg-light p-2">
-                <?php foreach ($courses2 as $course) { ?>
-                    <button class="course-btn <?php echo $course; ?>"><?php echo $course; ?></button>
+            <br><br>
+            <h1>Second Year Courses</h1>
+            <div class="card-container">
+                <?php foreach ($courses2 as $index => $course) { ?>
+                    <div class="card">
+                        <img src="./img/course1.jpg" alt="Denim Jeans" style="width:100%">
+                        <div class="card-title">
+                            <h1><?php echo $course; ?></h1>
+                            <p><?php echo $titles2[$index]; ?></p>
+                        </div>
+                        <p><button class="course-btn <?php echo $course; ?>" onclick="setSessionAndRedirect('<?php echo $course; ?>', '<?php echo $titles2[$index]; ?>')">Use AI</button></p>
+                    </div>
                 <?php } ?>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            // When the button is clicked
-            $('.course-btn').click(function() {
-                var classes = $(this).attr('class').split(' ');
-                var secondClass = classes.length > 1 ? classes[1] : null;
-                urlLink = `http://127.0.0.1:5000/${secondClass}_ai_starter`
-                console.log('Button class:', urlLink);
-                var formData = {
-                    userID: <?= htmlspecialchars($_SESSION["id"]); ?>,
-                    tod: <?= htmlspecialchars($_SESSION["tod"]); ?>,
-                    dow: <?= htmlspecialchars($_SESSION["dow"]); ?>,
-                    maxHours: <?= htmlspecialchars($_SESSION["maxHours"]); ?>
-                };
-                // Make an AJAX request to the Flask server
-                $.ajax({
-                    type: 'POST',
-                    url: urlLink, // Flask route to render the template
-                    data: formData,
-                    success: function(data) {
-                        // On success, replace the current HTML content with the received data
-                        $('body').html(data);
-                    },
-                    error: function(xhr, status, error) {
-                        // On error, log the error message
-                        console.error('Error:', error);
-                    }
-                });
-            });
-        });
-    </script>
+
 </body>
 
 </html>

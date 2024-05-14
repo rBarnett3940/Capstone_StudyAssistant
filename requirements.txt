@@ -1,0 +1,7 @@
+Flask==2.0.3
+requests==2.26.0
+gunicorn==20.1.0
+sqlalchemy==1.4.27
+flask-sqlalchemy==2.5.1
+pandas==1.3.4
+numpy==1.21.4

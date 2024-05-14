@@ -1,0 +1,40 @@
+/* Landing section styles */
+.landing {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+}
+  
+.landing-content {
+    width: 50%; 
+    padding: 1rem;
+}
+  
+.landing-image {
+    width: 50%; 
+}
+
+.landing h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.landing p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.landing a {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.landing a:hover {
+    background-color: #0056b3;
+}

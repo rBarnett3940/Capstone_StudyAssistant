@@ -1,0 +1,36 @@
+.features {
+    text-align: center; /* Center align content */
+}
+
+h1 {
+    font-size: 2rem; /* Increase font size for heading */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.feature p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.feature:hover {
+    filter: brightness(90%); /* Darken the feature on hover */
+}

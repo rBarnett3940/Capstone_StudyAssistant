@@ -33,5 +33,6 @@
             <p>You must select your preferences first before attempting to use the Study Hours Generator. Select the button below in order to do so.</p>
             <a href="./add-preferences-display.php"><button>Add Preferences</button></a>
         </div>
+    <?php include './includes/footer.php'; ?>
     </body>
 </html>

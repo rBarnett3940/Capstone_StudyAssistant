@@ -104,5 +104,6 @@
             <button type="submit" id="generate-btn" class="btn btn-primary">Add Preferences</button>
         </form>
     </div>
+<?php include './includes/footer.php'; ?>
 </body>
 </html>

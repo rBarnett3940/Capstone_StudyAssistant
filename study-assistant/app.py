@@ -25,8 +25,6 @@ def root():
 
 courses = ['COMP1126', 'COMP1127']
 
-
-
 # Define the home page
 @app.route("/COMP1126_ai_starter", methods=["POST"])
 def homeCOMP1126 ():

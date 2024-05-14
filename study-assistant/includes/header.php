@@ -2,7 +2,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #002c5c;">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <a class="navbar-brand" href="#" style="color: white;">Study Assistant</a>
+            <img src="./img/studylogo.png" alt="StudyAssistant Logo" style="height: 50px; width: 50px; margin-right: 10px; border-radius: 50%;">
+                <a class="navbar-brand" href="#" style="color: white;">Peli</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

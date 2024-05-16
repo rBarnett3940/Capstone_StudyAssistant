@@ -6,22 +6,74 @@ SET time_zone = "+00:00";
 
 
 --
--- Database: `timetable`
+-- Database: `capstone`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- 
+--
+-- database schema
+CREATE DATABASE capstone;
+
+USE capstone;
+
+
+-- Table for users
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `reg_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
 --
 
-CREATE TABLE events (
-    id INT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    start DATETIME NOT NULL,
-    end DATETIME NOT NULL
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
+-- Table for user preferences
+CREATE TABLE preferences (
+  userID int(11) NOT NULL PRIMARY KEY,
+  mode int,
+  tod int,
+  env int,
+  tech int,
+  retain int,
+  maxHours int
 );
 
+
+
+-- Table for user events for the timetable
+CREATE TABLE events (
+    userID INT ,
+    eventID INT PRIMARY KEY
+    info VARCHAR(255) NOT NULL,
+    FOREIGN KEY (userID)
+        REFERENCES users(id)
+        ON DELETE CASCADE
+);
+
+-- Tbale to store generated hours for each course
 CREATE TABLE hours(
     userID INT PRIMARY KEY NOT NULL,
     COMP1126 INT,

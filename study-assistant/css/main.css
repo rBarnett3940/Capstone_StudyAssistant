@@ -1,5 +1,8 @@
+/* Main style for page */
+/* Import for font */
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap");
 
+/* Stile for body */
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   margin-top: -50px;
@@ -16,6 +19,7 @@ body {
   background-attachment: fixed;
 }
 
+/* Style for container width */
 .container{
   width: 90vw;
 }

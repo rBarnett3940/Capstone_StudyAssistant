@@ -1,0 +1,86 @@
+/* Landing section styles */
+.welcome{
+    font-size: 4.5rem;
+    text-align: center;
+}
+
+/* Styles for the welcome messgae and image to be a row */
+.landing {
+    margin: none;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+  
+/* Dashboard message style */
+.landing-content {
+    width: 50%; 
+    padding: 1rem;
+}
+  
+/* Image styling */
+.landing-image {
+    width: 50%; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image shadow */
+.landing-image img{
+    box-shadow: 5px 5px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+      -khtml-box-shadow: 10px 10px 5px #ccc;
+}
+
+
+/* Style for responsive page */
+@media (max-width: 1000px) {
+    .landing {
+      flex-direction: column;
+    }
+    .landing-content {
+        width: 100%; 
+    }
+    .landing-image {
+        width: 50%; 
+    }
+  }
+
+  /* Style for welcome message text */
+.landing h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+
+/* Style for message */
+.landing p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+/* Style for link to AI */
+.landing a {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+
+.landing a:hover {
+    background-color: #0056b3;
+}

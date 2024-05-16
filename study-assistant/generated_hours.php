@@ -9,12 +9,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== TRUE) {
 }
 
 
-if (!isset($_SESSION['generated_hours'])) {
+if (!isset($_SESSION['message']) || !isset($_SESSION['prediction'])) {
     echo "<script>window.location.href='./ai-temp.php';</script>";
     exit;
-} else {
-    $response = $_SESSION['generated_hours'];
-    var_dump($response);
 }
 ?>
 
@@ -33,33 +30,36 @@ if (!isset($_SESSION['generated_hours'])) {
 </head>
 
 <body>
+    <!-- Include page header -->
     <?php include './includes/header.php'; ?>
     <br>
     <div class="container course">
+        <!-- Echo course code and title AS PAGE TITLE -->
         <h1><?php echo $_SESSION['course_code'] ?></h1>
         <p style="font-weight: bold;"><?php echo $_SESSION['course_title'] ?></p>
-        <p><?php echo $_SESSION['course_code'] ?></p>
-        <h2><?php echo $_SESSION['course_code'] ?></h2>
-        <p style="display: none;" id="user">{{ user }}</p>
-        <p style="display: none;" id="tod">{{ tod }}</p>
-        <p style="display: none;" id="dow">{{ dow }}</p>
-        <p style="display: none;" id="max-hours">{{ maxHours }}</p>
+        <!-- Message -->
+        <p><?php echo $_SESSION['message'] ?></p>
+        <!-- Prediction -->
+        <h2><?php echo $_SESSION['prediction'] ?></h2>
         <p>If you would like to for your recommeded study hours to be automatically added to your study timetable, please click the button below.</p>
+        <!-- Button to add to prediction to timetable -->
         <button id="t-btn">Add to Timetable</button>
     </div>
     <script>
         const button = document.getElementById('t-btn');
+        // Event listener for adding prediction to timetable
         button.addEventListener('click', function(event) {
             var course = document.querySelector("h1").innerText;
             var hours = parseInt(document.querySelector("h2").innerText);
-            var user = parseInt(document.querySelector('#user').innerText);
-            var tod = parseInt(document.querySelector('#tod').innerText);
-            var dow = parseInt(document.querySelector('#dow').innerText);
-            var maxHours = parseInt(document.querySelector('#max-hours').innerText);
+            var user = <?php echo $_SESSION["id"] ?>;
+            var tod = <?php echo $_SESSION["tod"] ?>;
+            var dow = <?php echo $_SESSION["dow"] ?>;
+            var maxHours = <?php echo $_SESSION["maxHours"] ?>;
             //window.location.href='./timetable.php';
             console.log("tod", tod)
 
 
+            // Getting the start hours for each time of the day
             var today = new Date();
             var startTime = new Date(today);
             console.log("test 1", startTime);
@@ -74,72 +74,26 @@ if (!isset($_SESSION['generated_hours'])) {
             console.log("test 2", startTime);
             console.log(todayFormatted);
 
+            // Getting the number of events to be created
             var numEvents = Math.floor(hours / maxHours);
             var remainder = hours % maxHours;
             if (remainder > 0) {
                 numEvents++;
             }
 
+            // Call the getEvnts function
             var events = getEvents(user, tod, dow, maxHours, todayFormatted, numEvents, remainder, course, hours, user);
 
-
-
-            // Check for existing events
-            /*
-            fetch('http://localhost:3000/api/events')
-                .then(response => response.json())
-                .then(events => {
-                    // Filter events based on user ID and check for overlaps
-                    var filteredEvents = events.filter(event => event.userID === user);
-                    var conflictingEvents = filteredEvents.filter(event => {
-                        var eventStart = new Date(event.start);
-                        return eventStart >= startTime && eventStart < endTime;
-                    });
-                    if (conflictingEvents.length > 0) {
-                        console.error('Conflicting events detected. Unable to add events.');
-                        return;
-                    }
-
-                    // Add events to the database
-                    var eventPromises = [];
-                    for (let i = 0; i < numEvents; i++) {
-                        var eventData = {
-                            title: course,
-                            start: startTime.toISOString(), // Convert to ISO string format
-                            daysOfWeek: [dow.toString()], // Convert to array with string value
-                            startTime: startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), // Format as HH:mm
-                            endTime: '', // Set the end time accordingly
-                            color: '#00FF00',
-                            recurring: true,
-                            id: Math.round(Math.random() * 100000) // Generate a random ID
-                        };
-                        // Calculate end time for the event (30 minutes by default)
-                        var endTime = new Date(startTime);
-                        endTime.setMinutes(endTime.getMinutes() + 30);
-                        eventData.endTime = endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Format as HH:mm
-                        
-                        // Add event data to the database
-                        var eventPromise = saveEvent(eventData);
-                        eventPromises.push(eventPromise);
-                        
-                        // Increment start time for the next event
-                        startTime.setMinutes(startTime.getMinutes() + maxHours * 60);
-                    }
-
-                    // Wait for all event promises to resolve
-                    Promise.all(eventPromises)
-                        .then(() => console.log('Events added successfully'))
-                        .catch(error => console.error('Error adding events:', error));
-                })
-                .catch(error => console.error('Error fetching events:', error));*/
         });
 
         function getEvents(user, tod, dow, hours, day_start, numEvents, remainder, course, hoursAI) {
+            // Call the get eventt endpoint from node.js
             fetch('http://localhost:3000/api/events')
                 .then(response => response.json())
                 .then(events => {
                     if (events[0] != undefined) {
                         eventsTotal = [];
+                        // Get the events for this specific user
                         for (let x in events) {
                             if (events[x]["userID"] == user) {
                                 var np = JSON.parse(events[x]["info"]);
@@ -148,9 +102,11 @@ if (!isset($_SESSION['generated_hours'])) {
                             }
                         }
                     }
+                    // Run check times function
                     console.log("Events Loaded Successfully");
                     checkTimes(eventsTotal, tod, dow, hours, numEvents, remainder, course, hoursAI, user);
                 })
+                // Catch any errors
                 .catch(error => console.error('Error fetching events:', error));
         }
 
@@ -176,6 +132,7 @@ if (!isset($_SESSION['generated_hours'])) {
             const slots = [];
             let currentTime = start;
 
+            // Check for available slots
             do {
                 slots.push({
                     start: currentTime,
@@ -198,6 +155,7 @@ if (!isset($_SESSION['generated_hours'])) {
             var slotTotal = 0;
             console.log("Type:", typeof(events[1].info.endTime));
 
+            // Checl slots based on day of the week
             if (dow == 1) {
                 for (let i = 1; i <= 5; i++) {
                     const availableSlots = [];
@@ -256,7 +214,7 @@ if (!isset($_SESSION['generated_hours'])) {
                         }
                     });
 
-                    console.log("3Available", availableSlots);
+                    console.log("Available", availableSlots);
                     slotTotal += availableSlots.length;
                     eventsInDay[i] = availableSlots;
                 }
@@ -268,6 +226,7 @@ if (!isset($_SESSION['generated_hours'])) {
 
             for (let j = 0; j < numEvents; j++) {
                 var eventId = 0;
+                // Getting available event IDs from node.js api
                 const response = await fetch('http://localhost:3000/api/EventIds', {
                         method: 'GET',
                         headers: {
@@ -298,9 +257,11 @@ if (!isset($_SESSION['generated_hours'])) {
                     });
             }
 
+            // Check if there are enough slots available to add events
             if (numEvents > slotTotal) {
                 alert("Not enough slots available in timetable. Please enter events manually!");
             } else {
+                // if enough slots call finalEvents function
                 finalEvents(eventsInDay, hours, numEvents, remainder, course, hoursAI, user, eventIdArr)
             }
         }
@@ -320,8 +281,10 @@ if (!isset($_SESSION['generated_hours'])) {
                 }
                 console.log(key, temp);
 
+                // Getting start and end times
                 let today = new Date();
-                let targetDay = (key - today.getDay() + 7) % 7; // Calculate the number of days until the next occurrence
+                // Calculate the number of days until the next occurrence
+                let targetDay = (key - today.getDay() + 7) % 7; 
                 let nextDay = new Date(today.getTime() + targetDay * 24 * 60 * 60 * 1000);
                 nextDay.setHours(eventsInDay[key][0]["start"], 0, 0, 0);
                 var dayFormatted = nextDay.toISOString();
@@ -335,19 +298,21 @@ if (!isset($_SESSION['generated_hours'])) {
                 }
 
                 counter--;
+                // Create event information
                 var eventData = {
                     title: course,
                     start: dayFormatted,
                     daysOfWeek: [key.toString()],
                     startTime: startT,
                     endTime: endT,
-                    color: '#00FF00',
+                    color: '#6082B6',
                     recurring: true,
                     id: eventId[i]
                 };
                 console.log("EventDATA", eventData);
                 console.log("checking", eventsInDay);
                 eventsInDay[key].shift();
+                // Call save event function
                 var temp = await saveEvent(eventData, user);
             }
             setTimeout(5000);
@@ -358,6 +323,7 @@ if (!isset($_SESSION['generated_hours'])) {
 
 
         function saveEvent(eventData, user) {
+            // call node.js apit for events to add events
             return fetch('http://localhost:3000/api/events', {
                     method: 'POST',
                     headers: {
@@ -381,102 +347,12 @@ if (!isset($_SESSION['generated_hours'])) {
                 .catch(error => console.error('Error saving event:', error));
         }
 
-        /*
-        function addToCalendar(){
-            if (hours > maxHours){
-                var r = hours%maxHours;
-                var q = Math.floor(hours / maxHours);
-            }else{
-
-            }
-        }
-
-        function loadNumberOfEventsByDay(events){
-            console.log(events);
-            for(var i=0; i<events.length; i++){
-                var num  = getDayOfWeek(events[i]["start"]);
-                eventsByDay[num] = eventsByDay[num] + parseInt(num);
-                console.log("test", eventsByDay[num]);
-            }
-        }
-
-        function findAvailableTime(){
-            if (dow == 1){
-
-            }
-            for (var i in total_events){
-                
-            }
-        }
-
-        function getDayOfWeek(dateString) {
-            // Create a new Date object from the provided dateString
-            var date = new Date(dateString);
-            // Get the day of the week (0=Sunday, 1=Monday, ..., 6=Saturday)
-            var dayOfWeek = date.getDay();
-            // Return an array with the day of the week
-            return dayOfWeek.toString();
-        }
-
-        function getTimeFromDate(dateTimeString) {
-            var date = new Date(dateTimeString);
-            var hours = date.getHours();
-            var minutes = date.getMinutes();
-            return hours + ':' + (minutes < 10 ? '0' : '') + minutes;
-        }
-*/
-        /*
-                function getEventId() {
-                    fetch('http://localhost:3000/api/EventIds', {
-                        method: 'GET',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to fetch existing event IDs');
-                        }
-                        return response.json();
-                    })
-                    .then(existingIds => {
-                        // Generate a unique event ID
-
-                        var eventId = Math.round(Math.random() * 100000);
-                        while (existingIds.includes(eventId)){
-                            eventId = Math.round(Math.random() * 100000);
-                        } 
-                        // Call the callback with the generated event ID
-                        console.log("This", eventId);
-                        return eventId;
-                    })
-                    .catch(error => {
-                        console.error('Error fetching existing event IDs:', error);
-                        // Call the callback with null to indicate error
-                        callback(null);
-                    });
-                }*/
-        /*
-        function saveEvent(eventData) {
-            console.log(typeof(eventData));
-            fetch('http://localhost:3000/api/events', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify([{userID: 1}, {eventID: eventData.id}, { info: eventData }]) // Wrap eventData in an object with 'info' property
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to save event');
-                }
-                console.log("Event Addedd Successfully")
-                return response.json();
-            })
-            .then(data => console.log(data.message))
-            .catch(error => console.error('Error saving event:', error));
-        }*/
+        
     </script>
+    <!-- Include page footer -->
+    <?php include './includes/footer.php'; ?>
 </body>
+<!-- Include notifications -->
+<?php include './includes/notifications.php'; ?>
 
 </html>

@@ -22,6 +22,7 @@
         $retention = $_POST["retention"];
         $maxHours = $_POST["maxHours"];
 
+        #Add to session variables
         $_SESSION["mode"] = $mode;
         $_SESSION["tod"] = $tod;
         $_SESSION["dow"] = $dow;
@@ -38,14 +39,14 @@
         $result_check = $stmt_check->get_result();
         
         if ($result_check->num_rows > 0) {
-            # Preferences exist, update them
+            # If preferences exist, update them
             $sql_update = "UPDATE preferences SET mode=?, tod=?, dow=?, env=?, tech=?, retain=?, maxHours=? WHERE userID=?";
             $stmt_update = $link->prepare($sql_update);
             $stmt_update->bind_param("iiiiiiii", $mode, $tod, $dow, $env, $tech, $retention, $maxHours, $_SESSION["id"]);
             $stmt_update->execute();
             $message = "Preferences updated successfully!";
         } else {
-            # Preferences don't exist, insert new preferences
+            # If preferences don't exist, insert new preferences
             $sql_insert = "INSERT INTO preferences (userID, mode, tod, dow, env, tech, retain, maxHours) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt_insert = $link->prepare($sql_insert);
             $stmt_insert->bind_param("iiiiiiii", $_SESSION["id"], $mode, $tod, $dow, $env, $tech, $retention, $maxHours);

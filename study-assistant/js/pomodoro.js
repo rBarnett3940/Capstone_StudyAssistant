@@ -1,10 +1,11 @@
 let countdown = 0; // variable to set/clear intervals
 let seconds = 1500; // seconds left on the clock
-let workTime = 25;
-let breakTime = 5;
+let workTime = 25;  //Default worktime
+let breakTime = 5;  //Default breaktime
 let isBreak = true;
 let isPaused = true;
 
+// Selectors for HTML elements
 const status = document.querySelector("#status");
 const timerDisplay = document.querySelector(".timerDisplay");
 const startBtn = document.querySelector("#start-btn");
@@ -12,11 +13,12 @@ const resetBtn = document.querySelector("#reset");
 const workMin = document.querySelector("#work-min");
 const breakMin = document.querySelector("#break-min");
 
-const alarm = document.createElement('audio'); // A bell sound will play when the timer reaches 0
+// Bell sound for when timer reaches 0
+const alarm = document.createElement('audio'); 
 alarm.setAttribute("src", "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3");
 
 
-/* EVENT LISTENERS FOR START AND RESET BUTTONS */
+// Start button listener
 startBtn.addEventListener('click', () => {
   clearInterval(countdown);
   isPaused = !isPaused;
@@ -25,6 +27,8 @@ startBtn.addEventListener('click', () => {
   }
 })
 
+
+// Reset button listener
 resetBtn.addEventListener('click', () => {
   clearInterval(countdown);
   seconds = workTime * 60;
@@ -33,7 +37,7 @@ resetBtn.addEventListener('click', () => {
   isBreak = true;
 })
 
-/* TIMER - HANDLES COUNTDOWN */
+// Countdown functionality
 function timer() {
   seconds --;
   if (seconds < 0) {
@@ -47,10 +51,11 @@ function timer() {
 }
 
  
-/* UPDATE WORK AND BREAK TIMES */
+// Increments for break and work times
 let increment_work = 5;
 let increment_break = 1;
 
+// Upper and lower limits for break and work times
 let incrementFunctions =
     {"#work-plus": function () { workTime = Math.min(workTime + increment_work, 60)},
      "#work-minus": function () { workTime = Math.max(workTime - increment_work, 5)},
@@ -63,13 +68,14 @@ for (var key in incrementFunctions) {
     }
 }
 
-/* UPDATE HTML CONTENT */
+//Update with gained information
 function countdownDisplay() {
   let minutes = Math.floor(seconds / 60);
   let remainderSeconds = seconds % 60;
   timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
 }
 
+//Button update
 function buttonDisplay() {
   if (isPaused && countdown === 0) {
     startBtn.textContent = "START";
@@ -80,6 +86,8 @@ function buttonDisplay() {
   }
 }
 
+
+//Message update
 function updateHTML() {
   countdownDisplay();
   buttonDisplay();

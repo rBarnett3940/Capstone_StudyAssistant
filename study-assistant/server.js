@@ -1,13 +1,15 @@
+// Node.js app
+// Imports
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const cors = require('cors'); // Import the cors middleware
+const cors = require('cors'); 
 const cron = require('node-cron');
 
 const app = express();
 const port = 3000;
 
-// Use the cors middleware
+
 app.use(cors());
 
 // Create MySQL connection
@@ -15,7 +17,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'timetable'
+    database: 'capstone'
 });
 
 // Connect to MySQL
@@ -26,7 +28,7 @@ db.connect((err) => {
     console.log('Connected to MySQL database');
 });
 
-// Middleware
+
 app.use(bodyParser.json());
 
 
@@ -38,9 +40,9 @@ cron.schedule('* * * * *', () => {
 });
 
 
-// Endpoint to fetch notifications
+// Actual function to fetch notifications
 function fetchNotifications(userID, callback) {
-    // const userID = 10; // Assuming userID is hardcoded for now
+    // Query to get info from database
     const query = "SELECT JSON_EXTRACT(info, '$.title') AS title, JSON_EXTRACT(info, '$.daysOfWeek') AS dow, JSON_EXTRACT(info, '$.startTime') AS start, JSON_EXTRACT(info, '$.endTime') AS end FROM events WHERE userID = ?";
 
     // Execute the query
@@ -53,15 +55,17 @@ function fetchNotifications(userID, callback) {
 
         try {
             const currentDate = new Date();
-            const currentTimeMinutes = currentDate.getHours() * 60 + currentDate.getMinutes(); // Current time in minutes since midnight
+            // Get current time in minutes
+            const currentTimeMinutes = currentDate.getHours() * 60 + currentDate.getMinutes(); 
+            // Current time upper and lower limits
             const currentTimeUpper = currentTimeMinutes + 1;
-            const currentTimeLower = currentTimeMinutes - 1;
-            const currentDay = currentDate.getDay(); // 0 (Sunday) to 6 (Saturday)
+            const currentTimeLower = currentTimeMinutes;
+            // Current day of the week
+            const currentDay = currentDate.getDay();
 
             for (let j = 0; j < results.length; j++) {
+                // Extract the start and end time parts 
                 const startParts = results[j].start.split(':').map(part => parseInt(part.replace(/"/g, '')));
-
-                // Extract end time parts and remove double quotes
                 const endParts = results[j].end.split(':').map(part => parseInt(part.replace(/"/g, '')));
 
 
@@ -69,7 +73,7 @@ function fetchNotifications(userID, callback) {
                 const eventStart = startParts[0] * 60 + startParts[1];
                 const eventEnd = endParts[0] * 60 + endParts[1];
 
-                // Check if the event is upcoming based on both day of the week and time
+                // Check if the event is upcoming based on day of the week and time of day
                 if (parseInt(results[j].dow[2]) === currentDay && eventStart >= currentTimeLower && eventStart <= currentTimeUpper) {
                     const notifications = `Event ${results[j].title} is happening now!`;
                     console.log(notifications);
@@ -87,7 +91,7 @@ function fetchNotifications(userID, callback) {
 }
 
 
-// Endpoint to fetch notifications
+// Route to fetch notifications
 app.get('/api/notifications/:userId', (req, res) => {
     const userID = req.params.userId;
     
@@ -107,7 +111,7 @@ app.use(express.static('public'));
 
 
 
-
+// Actual function to get the eventIDs
 function fetchExistingEventIds(callback) {
     const sql = 'SELECT eventID FROM events';
     db.query(sql, (err, result) => {
@@ -142,16 +146,16 @@ function convertToTime(minutes) {
     const hours = Math.floor(minutes / 60);
     const mins = minutes % 60;
 
-    // Determine AM or PM
+    // Determine if it is AM or PM
     const period = hours < 12 ? 'AM' : 'PM';
 
     // Convert hours to 12-hour format
     const displayHours = hours % 12 || 12;
 
-    // Pad minutes with leading zero if necessary
+    // Add leading zero if necessary
     const displayMins = String(mins).padStart(2, '0');
 
-    // Format time string
+    // Format string
     const timeString = `${displayHours}:${displayMins} ${period}`;
 
     return timeString;
@@ -161,7 +165,7 @@ function convertToTime(minutes) {
 
 app.get('/api/upcoming_events/:userId', function(req, res) {
     const userID = req.params.userId;
-    // const userID = 10; // Assuming userID is hardcoded for now
+    // Query to get event information
     const query = "SELECT JSON_EXTRACT(info, '$.title') AS title, JSON_EXTRACT(info, '$.daysOfWeek') AS dow, JSON_EXTRACT(info, '$.startTime') AS start, JSON_EXTRACT(info, '$.endTime') AS end FROM events WHERE userID = ?";
 
     // Execute the query
@@ -174,8 +178,10 @@ app.get('/api/upcoming_events/:userId', function(req, res) {
 
         try {
             const currentDate = new Date();
-            const currentTimeMinutes = currentDate.getHours() * 60 + currentDate.getMinutes(); // Current time in minutes since midnight
-            const currentDay = currentDate.getDay(); // 0 (Sunday) to 6 (Saturday)
+            // Get current time in minutes
+            const currentTimeMinutes = currentDate.getHours() * 60 + currentDate.getMinutes();
+            // Get current day of thr week
+            const currentDay = currentDate.getDay();
             const daysOfWeek = [];
 
             for (let i = 0; i < 7; i++) {
@@ -188,6 +194,7 @@ app.get('/api/upcoming_events/:userId', function(req, res) {
             const results = [];
 
 
+            // Get days of the week from the results
             for (let i = 0; i < daysOfWeek.length; i++) {
                 for (let j = 0; j < results1.length; j++) {
                     if (daysOfWeek[i] == parseInt(results1[j].dow[2])){
@@ -199,38 +206,40 @@ app.get('/api/upcoming_events/:userId', function(req, res) {
 
             var check = false;
 
+            // Name of day of the week based on day of the week number
+            let days = {0 : "Sunday", 1 : "Monday", 2 : "Tuesday", 3 : "Wednesday", 4 : "Thursday", 5 : "Friday", 6 : "Saturday"};
+            console.log("yes", results.length);
             for (let i = 0; i < daysOfWeek.length; i++) {
                 for (let j = 0; j < results.length; j++) {
                     if (daysOfWeek[i] === parseInt(results[j].dow[2])) {
-                        // Extract start and end times and remove double quotes
+                        // Extract start and end times
                         const startParts = results[j].start.split(':').map(part => parseInt(part.replace(/"/g, '')));
-
-                        // Extract end time parts and remove double quotes
                         const endParts = results[j].end.split(':').map(part => parseInt(part.replace(/"/g, '')));
 
 
-                        // Calculate event start and end times in minutes
+                        // Calculate event start and end times
                         const eventStart = startParts[0] * 60 + startParts[1];
                         const eventEnd = endParts[0] * 60 + endParts[1];
 
-                        // Check if the event is upcoming based on both day of the week and time
+                        // Check if the event is upcoming based on day of the week and time of day
                         if (daysOfWeek[i] === currentDay && eventStart >= currentTimeMinutes) {
                             upcomingEvents.push({
-                                title: results[j].title,
-                                dayOfWeek: daysOfWeek[i],
+                                title: results[j].title.replace(/^"(.*)"$/, '$1'),
+                                dayOfWeek: days[daysOfWeek[i]],
                                 startTime: convertToTime(eventStart),
                                 endTime: convertToTime(eventEnd)
                             });
 
                             
-                            // Break the loop if three upcoming events are found
+                            // Break the loop if three upcoming events are found and the upcoming events are not on the same day
                             if (upcomingEvents.length >= 3 && parseInt(results[j].dow[2]) != parseInt(results[j+1].dow[2])) {
                                 check = true;
                                 upcomingEvents.sort((a, b) => {
+                                    // Sort events based on time for the events of the same day of the week.
                                     if (a.dayOfWeek === b.dayOfWeek) {
                                         return a.startTime - b.startTime;
                                     } else {
-                                        return 0; // Maintain the order if dayOfWeek does not match
+                                        return 0;
                                     }
                                 });
                                 break;
@@ -238,30 +247,32 @@ app.get('/api/upcoming_events/:userId', function(req, res) {
                         } else if (daysOfWeek[i] > currentDay || daysOfWeek[i] < currentDay) {
                             // If it's a future day, include all events on that day
                             upcomingEvents.push({
-                                title: results[j].title,
-                                dayOfWeek: daysOfWeek[i],
+                                title: results[j].title.replace(/^"(.*)"$/, '$1'),
+                                dayOfWeek: days[daysOfWeek[i]],
                                 startTime: convertToTime(eventStart),
                                 endTime: convertToTime(eventEnd)
                             });
 
-                            console.log(upcomingEvents.length, parseInt(results[j].dow[2]), parseInt(results[j+1].dow[2]))
-                            // Break the loop if three upcoming events are found
+                            console.log(typeof(daysOfWeek[i]));
+
+                            // Break the loop if three upcoming events are found and the upcoming events are not on the same day
                             if (upcomingEvents.length >= 3 && parseInt(results[j].dow[2]) != parseInt(results[j+1].dow[2])) {
                                 check = true;
                                 upcomingEvents.sort((a, b) => {
+                                    // Sort events based on time for the events of the same day of the week.
                                     if (a.dayOfWeek === b.dayOfWeek) {
                                         return a.startTime - b.startTime;
                                     } else {
-                                        return 0; // Maintain the order if dayOfWeek does not match
+                                        return 0; 
                                     }
                                 });
                                 break;
                             }
                         } else if (daysOfWeek[i] === currentDay && eventStart < currentTimeMinutes) {
-                            // If it's a future day, include all events on that day
+                            // If it's a the current day, but the event has passed
                             upcomingSDEvents.push({
-                                title: results[j].title,
-                                dayOfWeek: daysOfWeek[i],
+                                title: results[j].title.replace(/^"(.*)"$/, '$1'),
+                                dayOfWeek: days[daysOfWeek[i]],
                                 startTime: convertToTime(eventStart),
                                 endTime: convertToTime(eventEnd)
                             });
@@ -269,30 +280,31 @@ app.get('/api/upcoming_events/:userId', function(req, res) {
                         }
                     }
                 }
-                // Sort events by start time regardless of the day of the week
                 
 
 
                 const temp = upcomingEvents.length;
-                // Break the loop if three upcoming events are found
+                // Break the loop if three upcoming events are found and the upcoming events are not on the same day
                 if ((upcomingEvents.length >= 3 && parseInt(results[temp-1].dow[2]) != parseInt(results[temp].dow[2])) || check) {
+                    // Sort events based on time for the events of the same day of the week.
                     upcomingEvents.sort((a, b) => {
                         if (a.dayOfWeek === b.dayOfWeek) {
                             return a.startTime - b.startTime;
                         } else {
-                            return 0; // Maintain the order if dayOfWeek does not match
+                            return 0;
                         }
                     });
                     break;
                 }
             }
-            if (upcomingEvents.length < 3){
+            // If events are less than 3, add previous events for that day.
+            if (upcomingEvents.length < 3 || upcomingEvents[0] == undefined){
                 for (let x = 0; x < daysOfWeek.length; x++){
-                    upcomingEvents.push(upcomingEvents[x]);
+                    upcomingEvents.push(upcomingSDEvents[x]);
                 }
             }
 
-            // Print or return the upcoming events
+            // respond with upcoming events
             console.log('Upcoming Events:', upcomingEvents);
             console.log('Check', upcomingSDEvents);
             res.status(200).send(upcomingEvents);
@@ -308,7 +320,7 @@ app.get('/api/upcoming_events/:userId', function(req, res) {
 
 
 
-// Route to handle POST requests to save events
+// Route to handle saving events
 app.post('/api/events', (req, res) => {
     const items = req.body;
     userID = items[0].userID;
@@ -332,8 +344,9 @@ app.post('/api/events', (req, res) => {
 });
 
 
-
+// Route to handle updating existing events
 app.post('/api/updateevents', (req, res) => {
+    // Get event data
     const items = req.body;
     userID = items[0].userID;
     eventID = items[1].eventID;
@@ -345,7 +358,7 @@ app.post('/api/updateevents', (req, res) => {
         return res.status(400).send({ error: 'Event data is required' });
     }
     const sql = 'UPDATE events SET userId = ?, eventID = ?, info = ? WHERE eventID = ?';
-    db.query(sql, [userID, eventID, JSON.stringify(info), eventID], (err, result) => { // Stringify the 'info' object
+    db.query(sql, [userID, eventID, JSON.stringify(info), eventID], (err, result) => {
         if (err) {
             console.error('Error saving event:', err);
             res.status(500).send({ error: 'Error saving event to database' });
@@ -356,7 +369,7 @@ app.post('/api/updateevents', (req, res) => {
 });
 
 
-
+// Route to handle removing events based on their eventID
 app.post('/api/removeevents', (req, res) => {
     const eventID = req.body.eventID;
     console.log(eventID);
@@ -364,7 +377,7 @@ app.post('/api/removeevents', (req, res) => {
         return res.status(400).send({ error: 'Event data is required' });
     }
     const sql = 'DELETE FROM events WHERE eventID = ?';
-    db.query(sql, [eventID], (err, result) => { // Stringify the 'info' object
+    db.query(sql, [eventID], (err, result) => { 
         if (err) {
             console.error('Error saving event:', err);
             res.status(500).send({ error: 'Error saving event to database' });
@@ -377,7 +390,7 @@ app.post('/api/removeevents', (req, res) => {
 
 
 
-
+// Route to handle getting all events from database
 app.get('/api/events', (req, res) => {
     const sql = 'SELECT * FROM events';
     db.query(sql, (err, result) => {
@@ -388,6 +401,7 @@ app.get('/api/events', (req, res) => {
         }
     });
 });
+
 
 
 // Start server

@@ -1,9 +1,12 @@
+/* Styles for timetable */
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-/* Apply the Raleway font to specific elements */
+/* Apply font to body */
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 
 :root {
     --fc-border-color: rgb(214, 214, 214);
@@ -11,11 +14,12 @@ body {
     width:100%;
   }
 
-
+/* Page Title stules */
 #custom-header h1{
     font-size: 50px;
 }
 
+/* Calendar styles */
 #calendar {
     padding: 20px;
     width:100%;
@@ -40,22 +44,20 @@ body {
 
 
 .fc-header-toolbar .fc-button {
-    background-color: #004792; /* Change to the desired background color */
-    color: #ffffff; /* Change to the desired text color */
+    background-color: #004792;
+    color: #ffffff; 
     border-color: #c7c7c7;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .fc-header-toolbar .fc-button:hover {
-    background-color: #0056b3; /* Background color on hover */
+    background-color: #0056b3;
 }
 
 .fc-header-toolbar button.fc-button.fc-button-primary.fc-button-active {
-    background-color: #0062ca; /* Background color when button is selected */
+    background-color: #0062ca; 
 }
-
-
 
   .fc-event:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -68,45 +70,27 @@ body {
   }
 
 
-/* Apply rounded corners to the individual event cells */
-.fc-daygrid-event, .fc-timegrid-event {
-    border-radius: 10px;
-}
-
-/* Apply rounded corners to the event popover */
-.fc-popover {
-    border-radius: 10px;
-}
-
-/* Apply rounded corners to the event tooltip */
-.fc-event-tooltip {
-    border-radius: 10px;
-}
-
-
-
-
-/* Customizing event colors */
+/* Event colorss styling */
 .fc-event {
-    background-color: #c7c7c7; /* Light gray background for events */
-    color: #333; /* Dark gray text color */
+    background-color: #c7c7c7; 
+    color: #333; 
 }
 
 /* Styling calendar header */
 .fc-toolbar-title {
-    font-size: 20px; /* Increase font size of the calendar title */
-    color: #555; /* Gray color for the calendar title */
+    font-size: 20px; 
+    color: #555; 
 }
 
-/* Adjusting event block size */
+/* Event block size styling */
 .fc-time-grid-event {
-    padding: 5px; /* Add padding around event blocks */
-    margin-bottom: 5px; /* Add margin between event blocks */
+    padding: 5px;
+    margin-bottom: 5px; 
 }
 
-/* Customizing event title */
+/* Event title Styling */
 .fc-title {
-    font-weight: bold; /* Make event titles bold */
+    font-weight: bold; 
 }
 
 

@@ -12,8 +12,7 @@ if (!isset($_SESSION['mode'])) {
     exit;
 }
 
-var_dump($_SESSION['generated_hours']);
-
+// Course information
 $courses1 = ["COMP1126", "COMP1127", "COMP1161", "COMP1210", "COMP1220"];
 $courses2 = ["COMP2190", "COMP2140", "COMP2171", "COMP2201", "COMP2211", "COMP2340", "COMP2130"];
 $titles1 = ["Introduction to Computing I", "Introduction to Computing II", "Object-Oriented Programming", "Mathematics for Computing", "Computing and Society"];
@@ -35,7 +34,7 @@ $titles2 = ["Net-Centric Computing", "Software Engineering", "Object Oriented De
 <body>
     <script>
         function setSessionAndRedirect(courseCode, courseTitle) {
-            // Set PHP session variables using AJAX
+            // Set Session variables
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'set_session_variables.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -48,12 +47,15 @@ $titles2 = ["Net-Centric Computing", "Software Engineering", "Object Oriented De
             xhr.send('course_code=' + courseCode + '&course_title=' + courseTitle);
         }
     </script>
+    <!-- Include page header -->
     <?php include './includes/header.php'; ?>
     <br>
     <div class="container">
         <div class="">
+            <!-- First year courses cards -->
             <h1>First Year Courses</h1>
             <div class="card-container">
+                <!-- Loop through first year courses -->
                 <?php foreach ($courses1 as $index => $course) { ?>
                     <div class="card">
                         <img src="./img/course1.jpg" alt="Denim Jeans" style="width:100%">
@@ -66,8 +68,10 @@ $titles2 = ["Net-Centric Computing", "Software Engineering", "Object Oriented De
                 <?php } ?>
             </div>
             <br><br>
+            <!-- Second year course -->
             <h1>Second Year Courses</h1>
             <div class="card-container">
+                <!-- Loop through second year courses -->
                 <?php foreach ($courses2 as $index => $course) { ?>
                     <div class="card">
                         <img src="./img/course1.jpg" alt="Denim Jeans" style="width:100%">
@@ -82,6 +86,11 @@ $titles2 = ["Net-Centric Computing", "Software Engineering", "Object Oriented De
         </div>
     </div>
 
+    <!-- Include page footer -->
+    <?php include './includes/footer.php'; ?>
+
 </body>
+<!-- Include notifications -->
+<?php include './includes/notifications.php'; ?>
 
 </html>

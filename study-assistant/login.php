@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $row = $result_select->fetch_assoc();
                 $default_values = $row;
               }
+              // Getting session variables
               if ($default_values) {
                 $_SESSION["mode"] = $default_values['mode'];
                 $_SESSION["tod"] = $default_values['tod'];
@@ -83,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
               # Redirect user to index page
-              echo "<script>" . "window.location.href='./timetable.php'" . "</script>";
+              echo "<script>" . "window.location.href='./dashboard.php'" . "</script>";
               exit;
             } else {
               # If password is incorrect show an error message

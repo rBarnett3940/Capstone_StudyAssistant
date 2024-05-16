@@ -27,13 +27,19 @@ if (isset($_SESSION['mode'])) {
 </head>
 
 <body>
+    <!-- Include page Header -->
     <?php include './includes/header.php'; ?>
     <br>
     <div class="container">
+        <!-- Error message page and link if user had not added their prefernces as yet -->
         <h1>AI Error!</h1>
         <p>You must select your preferences first before attempting to use the Study Hours Generator. Select the button below in order to do so.</p>
         <a href="./add-preferences-display.php"><button>Add Preferences</button></a>
     </div>
+    <!-- Include page footer -->
+    <?php include './includes/footer.php'; ?>
 </body>
+<!-- Include notifications -->
+<?php include './includes/notifications.php'; ?>
 
 </html>

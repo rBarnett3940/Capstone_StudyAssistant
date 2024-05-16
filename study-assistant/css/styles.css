@@ -1,7 +1,11 @@
+/* Styling for AI */
+
+/* Nav Bar Links Styling */
 header nav a{
     color: white;
 }
 
+/* Container for the Course Cards styling */
 .card-container{
     border: none;
     display: flex;
@@ -11,6 +15,7 @@ header nav a{
     gap: 20px;
 }
 
+/* Course card styling */
 .card {
     border: none;
     width: 15rem;
@@ -21,7 +26,7 @@ header nav a{
   .card:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
-  
+
   .card-title {
     padding: 25px 10px 0 10px;
   }
@@ -34,6 +39,7 @@ header nav a{
     font-size: 0.6rem;
   }
   
+  /* Button on the card styles */
   .card button {
     border: none;
     outline: 0;
@@ -46,6 +52,16 @@ header nav a{
     font-size: 18px;
   }
   
+
   .card button:hover {
     opacity: 0.9;
+  }
+
+
+  /* Upcoming events styles*/
+  #events-container{
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    max-width:500px;
   }

@@ -1,3 +1,4 @@
+# Python automation script to convert csv text values to numbers
 import csv
 
 
@@ -55,6 +56,7 @@ with open(input_file, 'r', newline='') as infile, open(output_file, 'w', newline
     writer = csv.writer(outfile)
 
 
+    # Run the check function for each cell
     for row in reader:
         data = []
         for cell in row:
@@ -62,12 +64,6 @@ with open(input_file, 'r', newline='') as infile, open(output_file, 'w', newline
             
             data.append(num)
         writer.writerow(data)
-        # Perform your logic to change cells as needed
-        # For example, changing the value in the second column (index 1) of each row to 'New Value'
-        #row[1] = 'New Value'
-
-        # Write the modified row to the output CSV file
-        #writer.writerow(row)
 
 print("CSV file processing complete.")
 

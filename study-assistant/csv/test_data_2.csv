@@ -1,59 +1,194 @@
 Timestamp,Mode,Time,Noise,Resources,COMP1126_Performance,COMP1127_Performance,COMP1161_Performance,COMP1210_Performance,COMP1220_Performance,COMP2190_Performance,COMP2140_Performance,COMP2171_Performance,COMP2201_Performance,COMP2211_Performance,COMP2340_Performance,COMP2130_Performance,COMP1126_Difficulty,COMP1127_Difficulty,COMP1161_Difficulty,COMP1210_Difficulty,COMP1220_Difficulty,COMP2190_Difficulty,COMP2140_Difficulty,COMP2171_Difficulty,COMP2201_Difficulty,COMP2211_Difficulty,COMP2340_Difficulty,COMP2130_Difficulty,COMP1126_Courses,COMP1127_Courses,COMP1161_Courses,COMP1210_Courses,COMP1220_Courses,COMP2190_Courses,COMP2140_Courses,COMP2171_Courses,COMP2201_Courses,COMP2211_Courses,COMP2340_Courses,COMP2130_Courses,COMP1126_Hours,COMP1127_Hours,COMP1161_Hours,COMP1210_Hours,COMP1220_Hours,COMP2190_Hours,COMP2140_Hours,COMP2171_Hours,COMP2201_Hours,COMP2211_Hours,COMP2340_Hours,COMP2130_Hours,Retention,Duration,Exam Increase,Exam Increase Hours
-2/27/2024 11:08:14,In a group,Evening,Quiet environment,Online Resources,10,10,9,8,9,1,8,7,5,1,2,1,1,1,1,,1,10,3,3,8,10,3,1,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,2,2,2,,,4,1,4,4,Good,2,Yes,2
-2/27/2024 11:16:29,In a group,Evening,Quiet environment,Online Resources,7,7,6,4,6,4,7,7,4,5,,,4,4,5,6,4,8,4,4,7,6,,,3,3,4,4,4,5,5,6,6,6,,,8,8,8,5,2,4,8,6,5,7,,,Fair,2,Yes,1
-2/27/2024 11:48:03,Alone,No preference,Quiet environment,Online Resources,10,10,10,7,10,7,6,7,6,7,10,5,1,1,1,4,1,9,7,7,9,10,6,6,5,5,5,5,5,5,5,6,5,6,6,5,4,4,4,4,4,4,4,4,4,4,4,4,Good,2,Yes,2
-2/28/2024 9:39:47,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,8,7,7,7,7,7,8,3,3,4,4,4,6,5,6,4,5,7,3,5,5,5,5,5,5,5,5,5,5,5,6,4,4,4,4,4,4,4,4,4,4,4,4,Good,2,Yes,During the Examination Period
-2/28/2024 9:45:38,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,7,6,8,2,2,3,3,3,5,5,5,4,5,7,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,4,2,4,4,4,4,4,4,2,Fair,2,Yes,During the Examination Period
-2/28/2024 12:22:56,Alone,No preference,Background noise,4,,,,2,2,,,,,,,,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,,1,1,3,2,1,3,Fair,1,Yes,During the Examination Period
-2/29/2024 4:40:03,Alone,Evening,Background noise,4,8,8,7,8,9,7,8,9,8,6,,,1,2,3,3,1,5,6,,4,10,,,5,5,5,5,5,,,,,,,,1,1,1,1,1,2,7,1,1,8,,,Good,2,Yes,1
-2/29/2024 7:07:13,In a group,Evening,Quiet environment,Online Resources,9,9,8,8,8,8,8,8,7,7,5,9,1,1,2,2,2,5,5,4,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
-2/29/2024 10:49:02,In a group,Morning,Background noise,Flashcards,8,8,6,8,,1,3,1,2,,,,3,4,7,6,,9,6,,9,,,,6,6,6,6,,3,3,,3,,,,6,6,5,2,,3,3,,2,,,,Fair,1,Yes,During the Examination Period
-3/1/2024 9:32,Alone,Morning,Quiet environment,Online Resources,10,10,7,,,,,,,,,,1,2,4,,,,,,,,,,5,5,6,,,,,,,,,,1,3,5,,,,,,,,,,Fair,2,Yes,During the Examination Period
-3/1/2024 9:49,Alone,Morning,Background noise,Online Resources,9,9,7,,7,,6,,6,,,,3,3,5,,2,,4,,8,,,,5,5,6,,6,,6,,6,,,,2,2,3,,2,,2,,3,,,,Good,2,Yes,During the Examination Period
-3/1/2024 10:03,In a group,Evening,Quiet environment,Flashcards,9,8,8,9,7,,,,,,,,1,1,2,1,3,,,,,,,,5,5,7,5,7,,,,,,,,2,2,4,3,4,,,,,,,,Good,2,Yes,1
-3/1/2024 10:04,In a group,Morning,Quiet environment,Online Resources,10,9,3,10,8,5,5,5,4,5,5,,1,6,9,3,8,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,2,Yes,2
-3/1/2024 10:13,Alone,No preference,Quiet environment,Online Resources,10,9,7,9,7,6,8,8,6,5,7,8,1,2,3,2,4,4,4,3,5,9,4,3,5,5,5,5,5,4,4,6,4,6,6,4,3,3,3,3,1,2,3,4,2,2,3,3,Fair,2,Yes,1
-3/1/2024 10:24,Alone,No preference,Quiet environment,Flashcards,10,10,6,8,10,3,4,5,2,2,5,1,2,2,3,3,1,10,2,2,10,10,3,8,6,6,6,6,5,5,5,5,5,5,5,5,3,3,3,3,3,3,,3,3,3,3,3,Fair,1,Yes,1
-3/1/2024 10:30,Alone,No preference,Background noise,Online Resources,10,10,8,3,8,3,8,8,,,5,,1,1,3,7,2,10,7,7,10,10,7,7,,,,,,,,,,,,,,,,,,,,,,,,,Fair,2,Yes,During the Examination Period
-3/1/2024 10:39,Alone,No preference,Quiet environment,Online Resources,10,10,8,10,3,1,1,1,1,1,1,1,1,1,4,2,8,5,5,5,5,5,5,5,5,5,6,5,1,1,1,1,1,1,1,1,2,2,3,5,7,1,1,1,1,1,1,1,Fair,1,Yes,During the Examination Period
-3/1/2024 10:46,Alone,Evening,Quiet environment,Online Resources,8,9,8,7,7,7,6,,,,9,,3,3,3,8,2,5,5,,,,5,,3,3,4,4,4,5,5,,,,6,,2,2,3,3,1,2,1,,,,2,,Fair,1,Yes,During the Examination Period
-3/1/2024 11:18,In a group,Afternoon,Quiet environment,Online Resources,7,7,7,7,9,5,7,7,6,,,,3,3,5,6,1,10,4,4,10,10,6,6,4,4,5,5,5,4,4,6,4,6,,6,3,3,3,3,3,3,3,3,3,3,,3,Fair,3,Yes,1
-3/1/2024 11:27,Alone,Morning,Quiet environment,Online Resources,9,9,9,6,8,,7,7,7,6,,,6,6,6,8,5,,6,7,10,10,,,3,3,2,2,3,,3,3,3,3,,,2,2,2,7,4,,4,5,7,7,,,Good,1,Yes,1
-3/1/2024 12:01,Alone,Evening,Background noise,Online Resources,9,9,8,6,10,6,8,6,7,6,8,5,1,1,2,2,1,7,2,5,5,6,4,5,4,4,5,5,4,5,5,5,5,5,5,5,3,3,4,5,4,8,5,7,8,8,8,6,Good,2,Yes,1
-3/2/2024 22:13,Alone,No preference,Quiet environment,Flashcards,10,10,,10,,,,,,,,,4,4,,1,,,,,,,,,8,8,,8,,,,,,,,,7,7,,4,,,,,,,,,Fair,2,Yes,During the Examination Period
-3/2/2024 22:32,Alone,Evening,Quiet environment,Online Resources,10,10,5,5,10,5,5,5,5,5,5,5,1,1,4,4,1,6,6,7,7,7,6,7,4,4,4,4,5,5,5,5,5,5,5,5,1,1,5,5,1,6,6,6,6,6,6,6,Fair,3,Yes,2
-3/3/2024 10:23,Alone,No preference,Quiet environment,Flashcards,10,10,9,8,9,7,7,8,8,8,6,9,1,1,2,3,3,5,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,During the Examination Period
-3/3/2024 10:25,In a group,Afternoon,Quiet environment,Online Resources,9,9,8,7,8,7,7,7,7,8,5,8,2,2,3,4,3,4,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,3,4,2,3,4,4,3,3,4,2,Fair,1,Yes,During the Examination Period
-3/3/2024 10:29,Alone,No preference,Background noise,Online Resources,9,9,9,8,8,8,8,8,8,8,7,9,3,3,3,3,3,5,5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1,1,1,1,Fair,2,Yes,2
-3/3/2024 10:34,Alone,No preference,Quiet environment,Online Resources,8,8,7,6,6,5,5,6,6,6,5,8,2,2,4,4,4,6,6,5,5,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,1
-3/3/2024 10:36,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,8,6,8,2,2,4,4,4,5,6,5,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,6,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
-3/3/2024 16:10,Alone,Evening,Background noise,4,9,9,5,,5,,,,,,,,8,9,10,,8,,,,,,,,6,6,7,,7,,,,,,,,3,3,3,,1,,,,,,,,Poor,2,Yes,1
-3/4/2024 12:31,Alone,Afternoon,Quiet environment,Online Resources,9,9,9,8,9,6,6,7,6,8,5,9,2,2,2,2,2,4,4,2,3,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,During the Examination Period
-3/4/2024 12:35,In a group,No preference,Background noise,Online Resources,10,9,8,7,8,7,6,7,7,7,5,9,1,1,2,3,2,4,4,4,4,4,5,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
-3/4/2024 12:38,In a group,No preference,Quiet environment,Online Resources,9,9,9,8,8,7,7,7,7,7,6,9,2,2,2,2,2,4,4,3,4,4,6,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Fair,1,Yes,1
-3/6/2024 9:22,In a group,Morning,Quiet environment,Study Groups,8,8,7,8,8,6,8,7,6,8,7,8,8,7,6,8,7,7,8,6,7,8,7,8,4,4,4,4,4,4,4,4,4,4,4,4,1,2,3,3,2,1,2,3,2,1,2,3,Fair,1,Yes,1
-3/6/2024 9:25,In a group,Morning,Quiet environment,Flashcards,7,7,7,7,7,7,7,7,7,7,7,7,3,3,6,6,5,6,5,4,5,,,6,5,4,5,4,5,5,4,5,4,5,4,5,2,1,2,1,2,1,2,2,1,2,1,1,Good,1,Yes,2
-3/6/2024 9:46,Alone,No preference,Quiet environment,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,No,During the Examination Period
-3/6/2024 9:46,In a group,No preference,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,Yes,5
-3/6/2024 9:46,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,No,4
-3/6/2024 9:46,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,2
-3/6/2024 9:46,Alone,Morning,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,No,1
-3/6/2024 9:48,In a group,No preference,Background noise,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,Yes,2
-3/6/2024 9:48,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,3,Yes,4
-3/6/2024 9:48,In a group,No preference,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,NA
-3/6/2024 9:48,In a group,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,1,Yes,4
-3/6/2024 9:48,Alone,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,5
-3/6/2024 9:50,Alone,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,Yes,2
-3/6/2024 9:50,Alone,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,1,No,2
-3/6/2024 9:50,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,5,No,4
-3/6/2024 9:50,Alone,Evening,Quiet environment,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,2,Yes,4
-3/6/2024 9:50,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,No,5
-3/6/2024 9:53,In a group,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,During the Examination Period
-3/6/2024 9:53,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,3,No,NA
-3/6/2024 9:53,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,3
-3/6/2024 9:54,In a group,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,During the Examination Period
-3/6/2024 9:54,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,No,4
-3/6/2024 10:36,Alone,Morning,Quiet environment,Flashcards,7,7,7,5,8,5,5,9,5,8,8,1,1,1,2,2,1,6,3,3,6,7,4,1,5,5,5,5,5,5,6,6,6,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
-3/6/2024 10:56,In a group,Evening,Background noise,Study Groups,4,4,4,2,9,4,3,8,3,7,1,5,7,7,8,9,4,9,5,3,9,9,6,9,4,4,4,6,6,5,5,5,5,5,5,5,6,5,6,5,4,6,5,4,5,5,6,6,Good,1,Yes,During the Examination Period
-3/6/2024 12:11,Alone,Evening,Background noise,Online Resources,6,7,7,5,8,4,5,5,4,8,6,6,3,3,4,6,2,10,6,4,9,10,8,6,5,5,5,5,5,5,5,5,5,5,5,5,3,4,3,7,3,8,2,2,8,8,5,1,Good,1,Yes,During the Examination Period
-3/6/2024 13:47,Alone,Morning,Quiet environment,Online Resources,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,1,Yes,1
+,In a group,Evening,Quiet environment,Online Resources,10,10,9,8,9,1,8,7,5,1,2,1,1,1,1,,1,10,3,3,8,10,3,1,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,2,2,2,,,4,1,4,4,Good,2,Yes,2
+,In a group,Evening,Quiet environment,Online Resources,7,7,6,4,6,4,7,7,4,5,,,4,4,5,6,4,8,4,4,7,6,,,3,3,4,4,4,5,5,6,6,6,,,8,8,8,5,2,4,8,6,5,7,,,Fair,2,Yes,1
+,Alone,No preference,Quiet environment,Online Resources,10,10,10,7,10,7,6,7,6,7,10,5,1,1,1,4,1,9,7,7,9,10,6,6,5,5,5,5,5,5,5,6,5,6,6,5,4,4,4,4,4,4,4,4,4,4,4,4,Good,2,Yes,2
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,8,7,7,7,7,7,8,3,3,4,4,4,6,5,6,4,5,7,3,5,5,5,5,5,5,5,5,5,5,5,6,4,4,4,4,4,4,4,4,4,4,4,4,Good,2,Yes,During the Examination Period
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,7,6,8,2,2,3,3,3,5,5,5,4,5,7,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,4,2,4,4,4,4,4,4,2,Fair,2,Yes,During the Examination Period
+,Alone,No preference,Background noise,4,,,,2,2,,,,,,,,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,,1,1,3,2,1,3,Fair,1,Yes,During the Examination Period
+,Alone,Evening,Background noise,4,8,8,7,8,9,7,8,9,8,6,,,1,2,3,3,1,5,6,,4,10,,,5,5,5,5,5,,,,,,,,1,1,1,1,1,2,7,1,1,8,,,Good,2,Yes,1
+,In a group,Evening,Quiet environment,Online Resources,9,9,8,8,8,8,8,8,7,7,5,9,1,1,2,2,2,5,5,4,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
+,In a group,Morning,Background noise,Flashcards,8,8,6,8,,1,3,1,2,,,,3,4,7,6,,9,6,,9,,,,6,6,6,6,,3,3,,3,,,,6,6,5,2,,3,3,,2,,,,Fair,1,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,10,10,7,,,,,,,,,,1,2,4,,,,,,,,,,5,5,6,,,,,,,,,,1,3,5,,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,Morning,Background noise,Online Resources,9,9,7,,7,,6,,6,,,,3,3,5,,2,,4,,8,,,,5,5,6,,6,,6,,6,,,,2,2,3,,2,,2,,3,,,,Good,2,Yes,During the Examination Period
+,In a group,Evening,Quiet environment,Flashcards,9,8,8,9,7,,,,,,,,1,1,2,1,3,,,,,,,,5,5,7,5,7,,,,,,,,2,2,4,3,4,,,,,,,,Good,2,Yes,1
+,In a group,Morning,Quiet environment,Online Resources,10,9,3,10,8,5,5,5,4,5,5,,1,6,9,3,8,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,2,Yes,2
+,Alone,No preference,Quiet environment,Online Resources,10,9,7,9,7,6,8,8,6,5,7,8,1,2,3,2,4,4,4,3,5,9,4,3,5,5,5,5,5,4,4,6,4,6,6,4,3,3,3,3,1,2,3,4,2,2,3,3,Fair,2,Yes,1
+,Alone,No preference,Quiet environment,Flashcards,10,10,6,8,10,3,4,5,2,2,5,1,2,2,3,3,1,10,2,2,10,10,3,8,6,6,6,6,5,5,5,5,5,5,5,5,3,3,3,3,3,3,,3,3,3,3,3,Fair,1,Yes,1
+,Alone,No preference,Background noise,Online Resources,10,10,8,3,8,3,8,8,,,5,,1,1,3,7,2,10,7,7,10,10,7,7,,,,,,,,,,,,,,,,,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,No preference,Quiet environment,Online Resources,10,10,8,10,3,1,1,1,1,1,1,1,1,1,4,2,8,5,5,5,5,5,5,5,5,5,6,5,1,1,1,1,1,1,1,1,2,2,3,5,7,1,1,1,1,1,1,1,Fair,1,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,8,9,8,7,7,7,6,,,,9,,3,3,3,8,2,5,5,,,,5,,3,3,4,4,4,5,5,,,,6,,2,2,3,3,1,2,1,,,,2,,Fair,1,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,7,7,7,7,9,5,7,7,6,,,,3,3,5,6,1,10,4,4,10,10,6,6,4,4,5,5,5,4,4,6,4,6,,6,3,3,3,3,3,3,3,3,3,3,,3,Fair,3,Yes,1
+,Alone,Morning,Quiet environment,Online Resources,9,9,9,6,8,,7,7,7,6,,,6,6,6,8,5,,6,7,10,10,,,3,3,2,2,3,,3,3,3,3,,,2,2,2,7,4,,4,5,7,7,,,Good,1,Yes,1
+,Alone,Evening,Background noise,Online Resources,9,9,8,6,10,6,8,6,7,6,8,5,1,1,2,2,1,7,2,5,5,6,4,5,4,4,5,5,4,5,5,5,5,5,5,5,3,3,4,5,4,8,5,7,8,8,8,6,Good,2,Yes,1
+,Alone,No preference,Quiet environment,Flashcards,10,10,,10,,,,,,,,,4,4,,1,,,,,,,,,8,8,,8,,,,,,,,,7,7,,4,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,10,10,5,5,10,5,5,5,5,5,5,5,1,1,4,4,1,6,6,7,7,7,6,7,4,4,4,4,5,5,5,5,5,5,5,5,1,1,5,5,1,6,6,6,6,6,6,6,Fair,3,Yes,2
+,Alone,No preference,Quiet environment,Flashcards,10,10,9,8,9,7,7,8,8,8,6,9,1,1,2,3,3,5,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,9,9,8,7,8,7,7,7,7,8,5,8,2,2,3,4,3,4,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,3,4,2,3,4,4,3,3,4,2,Fair,1,Yes,During the Examination Period
+,Alone,No preference,Background noise,Online Resources,9,9,9,8,8,8,8,8,8,8,7,9,3,3,3,3,3,5,5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1,1,1,1,Fair,2,Yes,2
+,Alone,No preference,Quiet environment,Online Resources,8,8,7,6,6,5,5,6,6,6,5,8,2,2,4,4,4,6,6,5,5,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,1
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,8,6,8,2,2,4,4,4,5,6,5,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,6,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
+,Alone,Evening,Background noise,4,9,9,5,,5,,,,,,,,8,9,10,,8,,,,,,,,6,6,7,,7,,,,,,,,3,3,3,,1,,,,,,,,Poor,2,Yes,1
+,Alone,Afternoon,Quiet environment,Online Resources,9,9,9,8,9,6,6,7,6,8,5,9,2,2,2,2,2,4,4,2,3,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,During the Examination Period
+,In a group,No preference,Background noise,Online Resources,10,9,8,7,8,7,6,7,7,7,5,9,1,1,2,3,2,4,4,4,4,4,5,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
+,In a group,No preference,Quiet environment,Online Resources,9,9,9,8,8,7,7,7,7,7,6,9,2,2,2,2,2,4,4,3,4,4,6,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Fair,1,Yes,1
+,In a group,Morning,Quiet environment,Study Groups,8,8,7,8,8,6,8,7,6,8,7,8,8,7,6,8,7,7,8,6,7,8,7,8,4,4,4,4,4,4,4,4,4,4,4,4,1,2,3,3,2,1,2,3,2,1,2,3,Fair,1,Yes,1
+,In a group,Morning,Quiet environment,Flashcards,7,7,7,7,7,7,7,7,7,7,7,7,3,3,6,6,5,6,5,4,5,,,6,5,4,5,4,5,5,4,5,4,5,4,5,2,1,2,1,2,1,2,2,1,2,1,1,Good,1,Yes,2
+,Alone,No preference,Quiet environment,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,No,During the Examination Period
+,In a group,No preference,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,Yes,5
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,No,4
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,2
+,Alone,Morning,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,No,1
+,In a group,No preference,Background noise,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,Yes,2
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,3,Yes,4
+,In a group,No preference,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,NA
+,In a group,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,1,Yes,4
+,Alone,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,5
+,Alone,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,Yes,2
+,Alone,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,1,No,2
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,5,No,4
+,Alone,Evening,Quiet environment,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,2,Yes,4
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,No,5
+,In a group,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,During the Examination Period
+,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,3,No,NA
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,3
+,In a group,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,During the Examination Period
+,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,No,4
+,Alone,Morning,Quiet environment,Flashcards,7,7,7,5,8,5,5,9,5,8,8,1,1,1,2,2,1,6,3,3,6,7,4,1,5,5,5,5,5,5,6,6,6,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
+,In a group,Evening,Background noise,Study Groups,4,4,4,2,9,4,3,8,3,7,1,5,7,7,8,9,4,9,5,3,9,9,6,9,4,4,4,6,6,5,5,5,5,5,5,5,6,5,6,5,4,6,5,4,5,5,6,6,Good,1,Yes,During the Examination Period
+,Alone,Evening,Background noise,Online Resources,6,7,7,5,8,4,5,5,4,8,6,6,3,3,4,6,2,10,6,4,9,10,8,6,5,5,5,5,5,5,5,5,5,5,5,5,3,4,3,7,3,8,2,2,8,8,5,1,Good,1,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,1,Yes,1
+,In a group,Evening,Quiet environment,Online Resources,10,10,9,8,9,1,8,7,5,1,2,1,1,1,1,,1,10,3,3,8,10,3,1,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,2,2,2,,,4,1,4,4,Good,2,Yes,2
+,In a group,Evening,Quiet environment,Online Resources,7,7,6,4,6,4,7,7,4,5,,,4,4,5,6,4,8,4,4,7,6,,,3,3,4,4,4,5,5,6,6,6,,,8,8,8,5,2,4,8,6,5,7,,,Fair,2,Yes,1
+,Alone,No preference,Quiet environment,Online Resources,10,10,10,7,10,7,6,7,6,7,10,5,1,1,1,4,1,9,7,7,9,10,6,6,5,5,5,5,5,5,5,6,5,6,6,5,4,4,4,4,4,4,4,4,4,4,4,4,Good,2,Yes,2
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,8,7,7,7,7,7,8,3,3,4,4,4,6,5,6,4,5,7,3,5,5,5,5,5,5,5,5,5,5,5,6,4,4,4,4,4,4,4,4,4,4,4,4,Good,2,Yes,During the Examination Period
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,7,6,8,2,2,3,3,3,5,5,5,4,5,7,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,4,2,4,4,4,4,4,4,2,Fair,2,Yes,During the Examination Period
+,Alone,No preference,Background noise,No,,,,2,2,,,,,,,,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,,1,1,3,2,1,3,Fair,1,Yes,During the Examination Period
+,Alone,Evening,Background noise,No,8,8,7,8,9,7,8,9,8,6,,,1,2,3,3,1,5,6,,4,10,,,5,5,5,5,5,,,,,,,,1,1,1,1,1,2,7,1,1,8,,,Good,2,Yes,1
+,In a group,Evening,Quiet environment,Online Resources,9,9,8,8,8,8,8,8,7,7,5,9,1,1,2,2,2,5,5,4,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
+,In a group,Morning,Background noise,Flashcards,8,8,6,8,,1,3,1,2,,,,3,4,7,6,,9,6,,9,,,,6,6,6,6,,3,3,,3,,,,6,6,5,2,,3,3,,2,,,,Fair,1,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,10,10,7,,,,,,,,,,1,2,4,,,,,,,,,,5,5,6,,,,,,,,,,1,3,5,,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,Morning,Background noise,Online Resources,9,9,7,,7,,6,,6,,,,3,3,5,,2,,4,,8,,,,5,5,6,,6,,6,,6,,,,2,2,3,,2,,2,,3,,,,Good,2,Yes,During the Examination Period
+,In a group,Evening,Quiet environment,Flashcards,9,8,8,9,7,,,,,,,,1,1,2,1,3,,,,,,,,5,5,7,5,7,,,,,,,,2,2,4,3,4,,,,,,,,Good,2,Yes,1
+,In a group,Morning,Quiet environment,Online Resources,10,9,3,10,8,5,5,5,4,5,5,,1,6,9,3,8,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,2,Yes,2
+,Alone,No preference,Quiet environment,Online Resources,10,9,7,9,7,6,8,8,6,5,7,8,1,2,3,2,4,4,4,3,5,9,4,3,5,5,5,5,5,4,4,6,4,6,6,4,3,3,3,3,1,2,3,4,2,2,3,3,Fair,2,Yes,1
+,Alone,No preference,Quiet environment,Flashcards,10,10,6,8,10,3,4,5,2,2,5,1,2,2,3,3,1,10,2,2,10,10,3,8,6,6,6,6,5,5,5,5,5,5,5,5,3,3,3,3,3,3,,3,3,3,3,3,Fair,1,Yes,1
+,Alone,No preference,Background noise,Online Resources,10,10,8,3,8,3,8,8,,,5,,1,1,3,7,2,10,7,7,10,10,7,7,,,,,,,,,,,,,,,,,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,No preference,Quiet environment,Online Resources,10,10,8,10,3,1,1,1,1,1,1,1,1,1,4,2,8,5,5,5,5,5,5,5,5,5,6,5,1,1,1,1,1,1,1,1,2,2,3,5,7,1,1,1,1,1,1,1,Fair,1,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,8,9,8,7,7,7,6,,,,9,,3,3,3,8,2,5,5,,,,5,,3,3,4,4,4,5,5,,,,6,,2,2,3,3,1,2,1,,,,2,,Fair,1,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,7,7,7,7,9,5,7,7,6,,,,3,3,5,6,1,10,4,4,10,10,6,6,4,4,5,5,5,4,4,6,4,6,,6,3,3,3,3,3,3,3,3,3,3,,3,Fair,3,Yes,1
+,Alone,Morning,Quiet environment,Online Resources,9,9,9,6,8,,7,7,7,6,,,6,6,6,8,5,,6,7,10,10,,,3,3,2,2,3,,3,3,3,3,,,2,2,2,7,4,,4,5,7,7,,,Good,1,Yes,1
+,Alone,Evening,Background noise,Online Resources,9,9,8,6,10,6,8,6,7,6,8,5,1,1,2,2,1,7,2,5,5,6,4,5,4,4,5,5,4,5,5,5,5,5,5,5,3,3,4,5,4,8,5,7,8,8,8,6,Good,2,Yes,1
+,Alone,No preference,Quiet environment,Flashcards,10,10,,10,,,,,,,,,4,4,,1,,,,,,,,,8,8,,8,,,,,,,,,7,7,,4,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,10,10,5,5,10,5,5,5,5,5,5,5,1,1,4,4,1,6,6,7,7,7,6,7,4,4,4,4,5,5,5,5,5,5,5,5,1,1,5,5,1,6,6,6,6,6,6,6,Fair,3,Yes,2
+,Alone,No preference,Quiet environment,Flashcards,10,10,9,8,9,7,7,8,8,8,6,9,1,1,2,3,3,5,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,9,9,8,7,8,7,7,7,7,8,5,8,2,2,3,4,3,4,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,3,4,2,3,4,4,3,3,4,2,Fair,1,Yes,During the Examination Period
+,Alone,No preference,Background noise,Online Resources,9,9,9,8,8,8,8,8,8,8,7,9,3,3,3,3,3,5,5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1,1,1,1,Fair,2,Yes,2
+,Alone,No preference,Quiet environment,Online Resources,8,8,7,6,6,5,5,6,6,6,5,8,2,2,4,4,4,6,6,5,5,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,1
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,8,6,8,2,2,4,4,4,5,6,5,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,6,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
+,Alone,Evening,Background noise,4,9,9,5,,5,,,,,,,,8,9,10,,8,,,,,,,,6,6,7,,7,,,,,,,,3,3,3,,1,,,,,,,,Poor,2,Yes,1
+,Alone,Afternoon,Quiet environment,Online Resources,9,9,9,8,9,6,6,7,6,8,5,9,2,2,2,2,2,4,4,2,3,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,During the Examination Period
+,In a group,No preference,Background noise,Online Resources,10,9,8,7,8,7,6,7,7,7,5,9,1,1,2,3,2,4,4,4,4,4,5,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
+,In a group,No preference,Quiet environment,Online Resources,9,9,9,8,8,7,7,7,7,7,6,9,2,2,2,2,2,4,4,3,4,4,6,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Fair,1,Yes,1
+,In a group,Morning,Quiet environment,Study Groups,8,8,7,8,8,6,8,7,6,8,7,8,8,7,6,8,7,7,8,6,7,8,7,8,4,4,4,4,4,4,4,4,4,4,4,4,1,2,3,3,2,1,2,3,2,1,2,3,Fair,1,Yes,1
+,In a group,Morning,Quiet environment,Flashcards,7,7,7,7,7,7,7,7,7,7,7,7,3,3,6,6,5,6,5,4,5,,,6,5,4,5,4,5,5,4,5,4,5,4,5,2,1,2,1,2,1,2,2,1,2,1,1,Good,1,Yes,2
+,Alone,No preference,Quiet environment,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,No,During the Examination Period
+,In a group,No preference,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,Yes,5
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,No,4
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,2
+,Alone,Morning,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,No,1
+,In a group,No preference,Background noise,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,Yes,2
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,3,Yes,4
+,In a group,No preference,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,NA
+,In a group,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,1,Yes,4
+,Alone,No preference,Quiet environment,No,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,5
+,Alone,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,Yes,2
+,Alone,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,1,No,2
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,5,No,4
+,Alone,Evening,Quiet environment,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,2,Yes,4
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,No,5
+,In a group,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,During the Examination Period
+,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,3,No,NA
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,3
+,In a group,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,During the Examination Period
+,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,No,4
+,Alone,Morning,Quiet environment,Flashcards,7,7,7,5,8,5,5,9,5,8,8,1,1,1,2,2,1,6,3,3,6,7,4,1,5,5,5,5,5,5,6,6,6,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
+,In a group,Evening,Background noise,Study Groups,4,4,4,2,9,4,3,8,3,7,1,5,7,7,8,9,4,9,5,3,9,9,6,9,4,4,4,6,6,5,5,5,5,5,5,5,6,5,6,5,4,6,5,4,5,5,6,6,Good,1,Yes,During the Examination Period
+,Alone,Evening,Background noise,Online Resources,6,7,7,5,8,4,5,5,4,8,6,6,3,3,4,6,2,10,6,4,9,10,8,6,5,5,5,5,5,5,5,5,5,5,5,5,3,4,3,7,3,8,2,2,8,8,5,1,Good,1,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,1,Yes,1
+,Alone,No preference,Background noise,Online Resources,8,8,7,6,6,5,6,6,6,6,5,8,3,3,4,6,6,7,5,5,6,6,7,3,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,4,4,5,6,5,4,2,Fair,2,Yes,1
+,Alone,Evening,Quiet environment,Online Resources,9,8,7,6,6,4,5,6,6,6,4,9,2,3,4,6,5,7,6,6,5,6,7,2,5,5,5,5,5,6,6,6,6,6,6,6,2,3,4,6,5,5,5,4,5,5,6,3,Good,2,Yes,During the Examination Period
+,In a group,No preference,Quiet environment,Study Groups,10,9,8,6,7,7,6,6,5,5,4,8,1,2,3,5,4,6,5,4,5,4,7,2,4,4,4,4,4,5,5,5,5,5,5,5,3,3,3,4,4,4,4,4,4,4,4,2,Good,3,Yes,1
+,Alone,Morning,Quiet environment,Flashcards,10,9,8,6,7,5,6,6,6,6,4,9,1,2,3,5,4,6,5,5,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,3,4,6,5,5,4,4,4,5,5,3,Excellent,1,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,9,9,8,8,7,6,6,6,6,6,5,9,2,2,3,4,4,5,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,4,4,4,4,4,4,4,4,4,3,Fair,2,Yes,2
+,In a group,No preference,Quiet environment,Study Groups,9,9,8,7,7,6,7,7,7,7,5,9,2,2,3,4,4,5,4,4,4,5,6,3,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,Fair,3,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,8,8,8,7,7,6,6,6,6,6,5,8,2,2,2,3,3,5,5,4,4,5,6,3,5,5,5,5,5,5,5,5,5,5,5,5,3,3,4,4,4,5,5,4,4,5,4,2,Good,2,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,9,9,8,7,7,6,6,6,5,6,5,7,2,3,3,3,4,6,6,5,5,5,6,3,5,5,5,5,5,5,5,5,5,5,5,5,3,4,4,3,5,4,5,3,6,4,5,3,Fair,2,Yes,2
+,Alone,Evening,Quiet environment,Study Groups,8,8,8,8,7,5,5,6,5,6,4,7,2,2,2,2,3,6,5,5,5,5,7,3,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,4,3,3,3,3,4,2,Good,2,Yes,1
+,In a group,Evening,Quiet environment,Online Resources,10,9,9,8,8,5,6,7,6,6,5,9,1,2,2,3,3,7,5,5,6,6,7,2,5,5,5,5,5,5,5,5,5,5,5,4,3,3,3,3,3,5,5,5,4,5,6,3,Good,1,Yes,1
+,Alone,Evening,Quiet environment,Online Resources,5,5,6,4,5,2,4,4,3,3,2,2,3,3,3,3,3,7,5,7,6,6,5,5,6,6,6,6,6,6,6,6,6,6,6,6,3,3,2,4,2,5,3,3,4,5,4,4,Fair,2,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Flashcards,6,5,5,,4,7,4,9,4,7,7,7,3,3,4,4,2,6,4,3,7,7,4,5,6,6,6,6,6,5,5,5,5,5,5,5,3,3,3,3,4,6,5,6,6,6,7,7,Fair,2,Yes,During the Examination Period
+,In a group,Evening,Quiet environment,Online Resources,8,8,8,8,8,8,8,7,8,8,8,9,5,5,4,5,5,4,4,4,5,5,6,6,5,5,5,5,5,6,6,6,6,6,6,6,2,2,2,2,2,2,2,2,2,2,2,2,Excellent,2,Yes,During the Examination Period
+,In a group,Evening,Background noise,Flashcards,5,5,3,6,4,7,3,3,7,7,7,7,8,7,7,7,7,10,6,6,10,10,6,6,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,Poor,2,Yes,3
+,Alone,Morning,Quiet environment,Online Resources,6,6,3,3,9,2,2,2,2,2,3,3,3,3,3,3,3,10,6,6,10,10,6,3,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,1,Fair,1,No,NA
+,Alone,Evening,Background noise,Online Resources,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7,3,8,6,6,8,8,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,3,3,3,3,3,3,3,Good,1,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Study Groups,6,6,6,6,6,2,4,4,2,2,4,4,3,3,3,3,3,10,5,5,10,10,5,5,6,6,6,6,6,6,6,6,5,5,3,3,3,3,3,3,3,2,3,3,6,6,3,3,Good,3,No,2
+,In a group,Afternoon,Background noise,Online Resources,8,8,8,6,8,7,8,8,8,8,8,8,2,2,2,2,2,5,3,3,5,5,3,3,5,5,5,5,5,4,4,4,5,5,4,4,5,5,5,5,5,3,3,3,5,5,1,2,Excellent,4,Yes,3
+,Alone,No preference,Background noise,Online Resources,7,7,5,5,8,3,5,5,4,4,5,5,4,4,6,5,3,7,4,4,7,7,4,4,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,1,Excellent,2,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,8,8,6,6,9,5,5,4,5,5,5,5,8,8,8,6,4,7,7,7,8,9,6,6,6,6,6,,6,5,5,5,5,5,5,5,3,3,3,3,3,2,2,2,2,2,2,2,Good,2,Yes,1
+,Alone,Afternoon,Background noise,Flashcards,6,6,6,4,9,4,4,4,5,3,5,5,3,3,3,3,3,6,5,5,7,7,5,5,6,6,6,6,6,5,5,5,5,5,5,5,2,2,2,3,1,3,1,1,3,3,2,2,Excellent,3,Yes,3
+,In a group,No preference,Background noise,Flashcards,4,4,3,3,6,3,4,4,3,3,4,4,5,5,5,7,2,9,5,5,9,9,5,5,5,5,5,5,5,4,5,5,5,5,5,5,2,2,2,3,1,3,1,1,3,3,1,1,Fair,1,No,NA
+,Alone,Evening,Quiet environment,Online Resources,7,7,5,5,7,5,5,5,5,5,5,5,4,4,4,6,4,6,5,5,6,6,4,4,6,6,5,6,5,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1,1,1,1,Fair,2,Yes,During the Examination Period
+,Alone,No preference,Quiet environment,Online Resources,7,7,5,5,8,4,5,5,6,4,5,5,4,4,5,4,4,7,5,5,4,7,4,4,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,1,2,1,1,2,2,1,1,Good,2,Yes,2
+,Alone,Afternoon,Quiet environment,Flashcards,6,6,6,5,8,5,5,6,5,5,7,7,3,3,3,4,2,7,5,5,7,7,3,4,6,6,6,6,6,5,5,5,5,5,5,5,1,1,1,3,1,3,2,2,3,3,1,1,Good,2,No,NA
+,In a group,Afternoon,Background noise,Study Groups,7,7,6,5,9,5,5,5,5,4,8,7,3,3,3,6,2,7,5,5,7,7,5,5,5,5,6,5,6,6,6,5,6,5,5,5,1,1,1,1,1,2,2,2,4,3,1,2,Excellent,2,Yes,1
+,In a group,No preference,Quiet environment,Study Groups,6,6,6,6,9,6,6,6,6,6,8,5,2,2,2,4,2,7,5,5,7,7,3,3,6,6,6,6,6,5,5,5,5,5,5,5,2,2,2,3,1,3,2,2,3,2,1,1,Good,1,Yes,During the Examination Period
+,Alone,No preference,Quiet environment,Online Resources,8,8,8,8,8,4,5,5,4,4,5,5,1,1,1,1,1,6,4,4,6,9,3,3,5,5,6,5,6,5,5,6,5,6,6,5,1,1,1,1,1,1,1,1,1,1,1,1,Good,1,No,NA
+,Alone,Morning,Quiet environment,Flashcards,9,9,7,5,9,4,6,6,5,3,7,7,1,1,2,3,1,6,6,6,7,9,4,4,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,3,,3,1,1,3,4,1,1,Fair,2,Yes,2
+,Alone,Evening,Quiet environment,Online Resources,7,7,4,4,7,2,4,3,3,3,4,4,4,4,6,7,3,9,7,7,9,9,5,5,5,5,5,5,5,1,5,5,5,3,2,2,1,1,1,3,1,1,1,1,3,3,1,1,Poor,1,Yes,During the Examination Period
+,Alone,Afternoon,Background noise,Online Resources,6,6,5,5,8,3,5,5,5,3,5,5,4,4,6,6,3,7,4,5,7,7,5,4,5,5,5,5,6,5,5,6,5,6,6,5,2,2,2,2,3,2,3,3,3,1,1,1,Excellent,4,No,NA
+,In a group,No preference,Quiet environment,Study Groups,10,10,8,8,9,6,7,7,7,5,8,8,1,1,1,2,1,8,4,4,5,6,2,2,3,3,3,3,3,5,5,5,5,5,5,5,4,4,4,4,2,4,4,4,4,4,2,2,Good,3,Yes,1
+,Alone,Afternoon,Quiet environment,4,2,2,2,1,2,1,1,1,1,1,1,1,5,5,5,8,5,9,8,8,9,9,7,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,1,Poor,1,No,NA
+,In a group,No preference,Background noise,Study Groups,5,5,5,3,5,3,5,5,3,2,5,5,6,6,6,8,5,9,6,6,9,9,5,5,5,5,5,5,5,6,6,6,6,6,6,6,2,2,2,2,1,2,1,1,2,2,1,2,Good,2,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,8,9,8,7,7,7,6,,,,9,,3,3,3,8,2,5,5,,,,5,,3,3,4,4,4,5,5,,,,6,,2,2,3,3,1,2,1,,,,2,,Fair,1,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,7,7,7,7,9,5,7,7,6,,,,3,3,5,6,1,10,4,4,10,10,6,6,4,4,5,5,5,4,4,6,4,6,,6,3,3,3,3,3,3,3,3,3,3,,3,Fair,3,Yes,1
+,Alone,Morning,Quiet environment,Online Resources,9,9,9,6,8,,7,7,7,6,,,6,6,6,8,5,,6,7,10,10,,,3,3,2,2,3,,3,3,3,3,,,2,2,2,7,4,,4,5,7,7,,,Good,1,Yes,1
+,Alone,Evening,Background noise,Online Resources,9,9,8,6,10,6,8,6,7,6,8,5,1,1,2,2,1,7,2,5,5,6,4,5,4,4,5,5,4,5,5,5,5,5,5,5,3,3,4,5,4,8,5,7,8,8,8,6,Good,2,Yes,1
+,Alone,No preference,Quiet environment,Flashcards,10,10,,10,,,,,,,,,4,4,,1,,,,,,,,,8,8,,8,,,,,,,,,7,7,,4,,,,,,,,,Fair,2,Yes,During the Examination Period
+,Alone,Evening,Quiet environment,Online Resources,10,10,5,5,10,5,5,5,5,5,5,5,1,1,4,4,1,6,6,7,7,7,6,7,4,4,4,4,5,5,5,5,5,5,5,5,1,1,5,5,1,6,6,6,6,6,6,6,Fair,3,Yes,2
+,Alone,No preference,Quiet environment,Flashcards,10,10,9,8,9,7,7,8,8,8,6,9,1,1,2,3,3,5,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,During the Examination Period
+,In a group,Afternoon,Quiet environment,Online Resources,9,9,8,7,8,7,7,7,7,8,5,8,2,2,3,4,3,4,4,4,4,4,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,3,4,2,3,4,4,3,3,4,2,Fair,1,Yes,During the Examination Period
+,Alone,No preference,Background noise,Online Resources,9,9,9,8,8,8,8,8,8,8,7,9,3,3,3,3,3,5,5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1,1,1,1,Fair,2,Yes,2
+,Alone,No preference,Quiet environment,Online Resources,8,8,7,6,6,5,5,6,6,6,5,8,2,2,4,4,4,6,6,5,5,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,1
+,Alone,No preference,Background noise,Online Resources,9,9,8,7,8,7,7,7,7,8,6,8,2,2,4,4,4,5,6,5,5,5,7,2,5,5,5,5,5,5,5,5,5,5,5,6,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
+,Alone,Evening,Background noise,4,9,9,5,,5,,,,,,,,8,9,10,,8,,,,,,,,6,6,7,,7,,,,,,,,3,3,3,,1,,,,,,,,Poor,2,Yes,1
+,Alone,Afternoon,Quiet environment,Online Resources,9,9,9,8,9,6,6,7,6,8,5,9,2,2,2,2,2,4,4,2,3,5,6,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Fair,2,Yes,During the Examination Period
+,In a group,No preference,Background noise,Online Resources,10,9,8,7,8,7,6,7,7,7,5,9,1,1,2,3,2,4,4,4,4,4,5,2,5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,Good,2,Yes,1
+,In a group,No preference,Quiet environment,Online Resources,9,9,9,8,8,7,7,7,7,7,6,9,2,2,2,2,2,4,4,3,4,4,6,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Fair,1,Yes,1
+,In a group,Morning,Quiet environment,Study Groups,8,8,7,8,8,6,8,7,6,8,7,8,8,7,6,8,7,7,8,6,7,8,7,8,4,4,4,4,4,4,4,4,4,4,4,4,1,2,3,3,2,1,2,3,2,1,2,3,Fair,1,Yes,1
+,In a group,Morning,Quiet environment,Flashcards,7,7,7,7,7,7,7,7,7,7,7,7,3,3,6,6,5,6,5,4,5,,,6,5,4,5,4,5,5,4,5,4,5,4,5,2,1,2,1,2,1,2,2,1,2,1,1,Good,1,Yes,2
+,Alone,No preference,Quiet environment,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,No,During the Examination Period
+,In a group,No preference,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,Yes,5
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,No,4
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,2
+,Alone,Morning,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,No,1
+,In a group,No preference,Background noise,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,2,Yes,2
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,3,Yes,4
+,In a group,No preference,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,5,Yes,NA
+,In a group,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,1,Yes,4
+,Alone,No preference,Quiet environment,No,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,5
+,Alone,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,2,Yes,2
+,Alone,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,1,No,2
+,In a group,Evening,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,5,No,4
+,Alone,Evening,Quiet environment,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Excellent,2,Yes,4
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Fair,2,No,5
+,In a group,Evening,Background noise,Online Resources,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Poor,5,Yes,During the Examination Period
+,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,3,No,NA
+,In a group,No preference,Quiet environment,4,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,3
+,In a group,Afternoon,Quiet environment,Study Groups,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,Yes,During the Examination Period
+,Alone,Evening,Background noise,Flashcards,8,7,7,7,9,5,7,7,5,5,6,7,3,3,4,4,1,5,4,5,7,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,1,1,1,1,1,2,1,1,2,2,1,1,Good,4,No,4
+,Alone,Morning,Quiet environment,Flashcards,7,7,7,5,8,5,5,9,5,8,8,1,1,1,2,2,1,6,3,3,6,7,4,1,5,5,5,5,5,5,6,6,6,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,Fair,2,Yes,1
+,In a group,Evening,Background noise,Study Groups,4,4,4,2,9,4,3,8,3,7,1,5,7,7,8,9,4,9,5,3,9,9,6,9,4,4,4,6,6,5,5,5,5,5,5,5,6,5,6,5,4,6,5,4,5,5,6,6,Good,1,Yes,During the Examination Period
+,Alone,Evening,Background noise,Online Resources,6,7,7,5,8,4,5,5,4,8,6,6,3,3,4,6,2,10,6,4,9,10,8,6,5,5,5,5,5,5,5,5,5,5,5,5,3,4,3,7,3,8,2,2,8,8,5,1,Good,1,Yes,During the Examination Period
+,Alone,Morning,Quiet environment,Online Resources,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fair,1,Yes,1
+,Alone,No preference,Background noise,Online Resources,8,8,7,6,6,5,6,6,6,6,5,8,3,3,4,6,6,7,5,5,6,6,7,3,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,4,4,5,6,5,4,2,Fair,2,Yes,1
+,Alone,Evening,Quiet environment,Online Resources,9,8,7,6,6,4,5,6,6,6,4,9,2,3,4,6,5,7,6,6,5,6,7,2,5,5,5,5,5,6,6,6,6,6,6,6,2,3,4,6,5,5,5,4,5,5,6,3,Good,2,Yes,During the Examination Period

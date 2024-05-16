@@ -28,13 +28,17 @@ if (!isset($_SESSION['course_code'])) {
 </head>
 
 <body>
+    <!-- Include page header -->
     <?php include './includes/header.php'; ?>
     <br>
     <div class="container course">
+        <!-- Import course code and title from SESSION -->
         <h1><?php echo $_SESSION['course_code'] ?></h1>
         <p style="font-weight: bold;"><?php echo $_SESSION['course_title'] ?></p>
+        <!-- Form for AI -->
         <form id="prediction-form" method="post" action="">
             <div class="itms">
+                <!-- Difficulty -->
                 <label for="difficulty">Difficulty: <span>(How difficult do you find this course with 10 being the most difficult?)</span></label>
                 <br>
                 <select id="difficulty" name="difficulty" required>
@@ -53,6 +57,7 @@ if (!isset($_SESSION['course_code'])) {
             </div>
             <br>
             <div class="itms">
+                <!-- Number of Courses -->
                 <label for="courses">Courses: <span>(How many total courses are you currently doing?)</span></label>
                 <br>
                 <select id="courses" name="courses" required>
@@ -67,9 +72,12 @@ if (!isset($_SESSION['course_code'])) {
                 </select>
             </div>
             <br>
+            <!-- Submit Button -->
             <button type="submit" id="generate-btn" class="btn btn-primary">Generate</button>
         </form>
     </div>
+    <!-- Include Footer -->
+    <?php include './includes/footer.php'; ?>
     <script>
         $(document).ready(function() {
             // Function to make the Ajax request and return a Promise
@@ -80,22 +88,23 @@ if (!isset($_SESSION['course_code'])) {
                         url: url,
                         data: data,
                         success: function(response) {
-                            resolve(response); // Resolve the Promise with the response
+                            resolve(response); 
                         },
                         error: function(xhr, status, error) {
-                            reject(error); // Reject the Promise with the error
+                            reject(error);
                         }
                     });
                 });
             }
 
+            // Submit button listener
             $('#generate-btn').click(async function(event) {
-                // Prevent the default form submission behavior
                 event.preventDefault();
 
                 var course = $('h1').text().trim();
                 console.log(course);
 
+                // Flask endpoint
                 var urlLink = `http://127.0.0.1:5000/${course}_ai`;
                 console.log(urlLink);
 
@@ -113,17 +122,19 @@ if (!isset($_SESSION['course_code'])) {
                 console.log(formData);
 
                 try {
-                    // Make the Ajax request and wait for the response
+                    // Using async await
                     var response = await makeRequest(urlLink, formData);
 
-                    // Handle the response if needed
                     console.log(response['message']);
-                    $.post('./store_session_variable.php', {
-                        message: response
+                    // Receive responses and send it to php file to save it as SESSION variables
+                    $.post('./set_session_variables.php', {
+                        message: response['message'],
+                        prediction: response['prediction']
                     });
+                    // Go to new page
                     window.location.href = `./generated_hours.php`;
                 } catch (error) {
-                    // On error, log the error message
+                    // Catch and log error
                     console.error('Error:', error);
                 }
             });
@@ -132,5 +143,7 @@ if (!isset($_SESSION['course_code'])) {
 
 
 </body>
+<!-- Include notifications -->
+<?php include './includes/notifications.php'; ?>
 
 </html>
